@@ -1,4 +1,4 @@
-package com.seu.mse.scrm;
+package com.seu.scrm;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -5,6 +5,7 @@ public class orders {
     private String prod_asin;
     private int rate;
     private int unix_time;
+    private int num;
 
     public String getUser_id() {
         return user_id;
@@ -36,5 +37,13 @@ public class orders {
 
     public void setUnix_time(int unix_time) {
         this.unix_time = unix_time;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
     }
 }

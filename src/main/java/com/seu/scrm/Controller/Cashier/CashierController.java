@@ -6,18 +6,23 @@ package com.seu.scrm.Controller.Cashier;
 
 import com.seu.scrm.Entity.customer;
 import com.seu.scrm.Entity.product;
-import com.seu.scrm.Mapper.CashMapper;
+
 import com.seu.scrm.Service.CashierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 @Controller
+@CrossOrigin//准许跨域访问
 @RequestMapping("/cashier")
 public class CashierController {
 
@@ -26,27 +31,42 @@ public class CashierController {
 
     @PostMapping("/findProd")
     @ResponseBody//响应体自动改json格式
-    public List<product> findProdByID(@RequestParam("asin") String asin){
-        return  cashierService.findProdByID(asin);
+    public Map<String, Object> findProdByID(@RequestParam("asin") String asin){
+        Map<String, Object> map = new HashMap<String, Object>();
+        if(asin != null && asin != "") {
+            product _product = cashierService.findProdByID(asin);
+            map.put("success",true);
+            map.put("asin",asin);
+            map.put("title",_product.getTitle());
+            map.put("price",_product.getPrice());
+            map.put("imUrl",_product.getImUrl());
+            map.put("cate",_product.getCate());
+            map.put("brand",_product.getBrand());
+        }
+        else{
+            map.put("success",false);
+        }
+
+        return map;
     }
 
     @RequestMapping("/addOrder")
     @ResponseBody
-    public Map<String, Object> addOrder(@RequestParam("user_id") String user_id, @RequestParam("prod_asin") String prod_asin){
-        //利用hashMap存储插入成功的返回值，告诉客户端插入数据成功
+    public Map<String, Object> addOrder(@RequestParam("user_id") String user_id, @RequestParam("prod_asin") String prod_asin,@RequestParam("num") int num){
+
         Map<String, Object> map = new HashMap<String, Object>();
-        int value = cashierService.addOrder(user_id,prod_asin);
+        int value = cashierService.addOrder(user_id,prod_asin,num);
         map.put("value", value);
         return map;
     }
 
     @RequestMapping("/updatePoints")
     @ResponseBody
-    public Map<String, Object> updatePoints(@RequestParam ("user_id") String user_id,@RequestParam("memb_points") int memb_points){
+    public Map<String, Object> updatePoints(@RequestParam ("user_id") String user_id,@RequestParam("total") int total){
 
         customer _customer=cashierService.findCustomerByID(user_id);
-        int old_points=_customer.getMemb_points();//会员原来的积分
-        memb_points+=old_points;
+        int memb_points=_customer.getMemb_points();//会员原来的积分
+        memb_points += total ;
 
         //更新会员积分
         Map<String, Object> map = new HashMap<String, Object>();
@@ -56,4 +76,50 @@ public class CashierController {
         return map;
     }
 
+
+    /**
+     * @Description: 产生4位验证码，转发创建会话
+     * @Param: 
+     * @Return: 
+     * @Author: karin
+     */
+/*
+    @RequestMapping("/code")
+    public ModelAndView getCode(@RequestParam("face_id") String face_id, HttpSession sessionn){
+
+        //产生4位验证码
+        String base = "0123456789ABCDEFGabcdefg";
+        int size = base.length();
+        Random r = new Random();
+        StringBuffer sb = new StringBuffer();
+        for(int i=1;i<=4;i++){
+            //产生0到size-1的随机值
+            int index = r.nextInt(size);
+            //在base字符串中获取下标为index的字符
+            char c = base.charAt(index);
+            //将c放入到StringBuffer中去
+            sb.append(c);
+        }
+
+        String code=sb.toString();
+
+        //封装成map集合,存入session
+        Map<String, Object> message = new HashMap<String, Object>();
+        message.put("code",code);
+        message.put("face_id",face_id);
+        sessionn.setAttribute("message",message);
+
+        ModelAndView mav = new ModelAndView("session");
+        mav.addObject("message", message);
+        return mav;
+
+    }
+
+   */
+
+   /* @RequestMapping("/addOpenId")
+    @ResponseBody
+    public String addOpenId(@RequestParam("open_id") String open_id, @RequestParam("code") String code){
+
+    }*/
 }

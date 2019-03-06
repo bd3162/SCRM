@@ -19,13 +19,13 @@ public class CashierService {
     @Autowired
     private CashMapper cashMapper;
 
-    public  List<product> findProdByID(@RequestParam("asin") String asin){
-        List<product> products=cashMapper.findProdByID(asin);
-        return products;
+    public product findProdByID(@RequestParam("asin") String asin){
+        product _product=cashMapper.findProdByID(asin);
+        return _product;
     }
 
-    public int addOrder(@RequestParam("user_id") String user_id, @RequestParam("prod_asin") String prod_asin){
-        int value = this.cashMapper.addOrder(user_id,prod_asin);
+    public int addOrder(@RequestParam("user_id") String user_id, @RequestParam("prod_asin") String prod_asin,@RequestParam("num") int num){
+        int value = this.cashMapper.addOrder(user_id,prod_asin,num);
          return value;
     }
 

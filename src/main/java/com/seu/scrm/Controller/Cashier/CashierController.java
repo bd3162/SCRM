@@ -50,17 +50,13 @@ public class CashierController {
     public Map<String, Object> updatePoints(@RequestParam ("user_id") String user_id,@RequestParam("total") int total){
         Map<String, Object> map = new HashMap<String, Object>();
 
-        if(total!=0){
-            Map<String, Object> _customer=cashierService.findCustomerByID(user_id);
-            int memb_points=(int)_customer.get("memb_points");//会员原来的积分
-            memb_points += total ;
+        Map<String, Object> _customer=cashierService.findCustomerByID(user_id);
+        int memb_points=(int)_customer.get("memb_points");//会员原来的积分
+        memb_points += total ;
 
-            //更新会员积分
-            map=cashierService.updatePoints(user_id,memb_points);
-        }else{
-            map.put("message","积分不为0，请确认积分信息");
-        }
-            return map;
+        //更新会员积分
+        map=cashierService.updatePoints(user_id,memb_points);
+        return map;
     }
 
 

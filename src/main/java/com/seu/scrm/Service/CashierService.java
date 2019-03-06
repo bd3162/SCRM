@@ -29,7 +29,7 @@ public class CashierService {
         if(asin != null && asin != "") {
             product _product = cashMapper.findProdByID(asin);
             if( _product != null) {
-                map.put("message", "查找成功");
+                map.put("message",true);
                 map.put("asin", _product.getAsin());
                 map.put("title", _product.getTitle());
                 map.put("price", _product.getPrice());
@@ -37,10 +37,12 @@ public class CashierService {
                 map.put("cate", _product.getCate());
                 map.put("brand", _product.getBrand());
             }
-            map.put("message","商品查找失败，商品不存在");
+            else {
+                map.put("message",false);
+            }
         }
         else{
-            map.put("message","商品查找失败，请输入商品");
+            map.put("message",false);
         }
         return map;
     }
@@ -59,15 +61,15 @@ public class CashierService {
             product _product = cashMapper.findProdByID(prod_asin);
             //商品不存在
             if(_product == null){
-                map.put("message","订单添加失败，商品不存在");
+                map.put("message",true);
             }
             else if(cashMapper.addOrder(user_id, prod_asin, num)){
-                map.put("message","订单添加成功");
+                map.put("message",false);
             }else {
-                map.put("message","订单添加失败,请重新输入订单信息");
+                map.put("message",false);
             }
         }else {
-            map.put("message","订单添加失败，请输入订单信息");
+            map.put("message",false);
         }
         return map;
     }
@@ -83,17 +85,17 @@ public class CashierService {
         if(user_id != null && user_id != "") {
             customer _customer = cashMapper.findCustomerByID(user_id);
             if( _customer != null) {
-                map.put("message","用户查找成功");
+                map.put("message",true);
                 map.put("user_id",_customer.getUser_id());
                 map.put("face_id",_customer.getFace_id());
                 map.put("open_id",_customer.getOpen_id());
                 map.put("memb_points",_customer.getMemb_points());
             }else {
-                map.put("message","用户查找失败，用户不存在");
+                map.put("message",false);
             }
         }
         else{
-            map.put("success","用户查找失败，请输入用户");
+            map.put("success",false);
         }
         return map;
     }
@@ -111,15 +113,15 @@ public class CashierService {
             customer _customer = cashMapper.findCustomerByID(user_id);
             //用户不存在
             if(_customer ==null){
-                map.put("message","积分更新失败，用户不存在");
+                map.put("message",false);
             }
             else if(cashMapper.updatePoints(user_id,memb_points)){
-                map.put("message","积分更新成功");
+                map.put("message",true);
             }else {
-                map.put("message","积分更新失败，请重新输入用户信息");
+                map.put("message",false);
             }
         }else {
-            map.put("message","积分更新失败，请输入用户信息");
+            map.put("message",false);
         }
         return map;
     }

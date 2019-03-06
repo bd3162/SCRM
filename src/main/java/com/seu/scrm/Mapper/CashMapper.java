@@ -24,7 +24,7 @@ public interface CashMapper {
      */
 
     @Insert("insert into orders(user_id,prod_asin,num)values(#{user_id},#{prod_asin},${num})")
-    int addOrder(@Param("user_id") String user_id, @Param("prod_asin") String prod_id, @Param("num") int num);
+    boolean addOrder(@Param("user_id") String user_id, @Param("prod_asin") String prod_id, @Param("num") int num);
 
     /**
      * @Description: 查询用户当前积分
@@ -42,6 +42,6 @@ public interface CashMapper {
      * @Author: karin
      */
     @Update("update customer set memb_points = ${memb_points} where user_id = #{user_id}")
-    int updatePoints(@Param("user_id") String user_id, @Param("memb_points") int memb_points);
+    boolean updatePoints(@Param("user_id") String user_id, @Param("memb_points") int memb_points);
 
 }

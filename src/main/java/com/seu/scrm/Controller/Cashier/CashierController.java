@@ -33,47 +33,34 @@ public class CashierController {
     @ResponseBody//响应体自动改json格式
     public Map<String, Object> findProdByID(@RequestParam("asin") String asin){
         Map<String, Object> map = new HashMap<String, Object>();
-        if(asin != null && asin != "") {
-            product _product = cashierService.findProdByID(asin);
-            map.put("success",true);
-            map.put("asin",asin);
-            map.put("title",_product.getTitle());
-            map.put("price",_product.getPrice());
-            map.put("imUrl",_product.getImUrl());
-            map.put("cate",_product.getCate());
-            map.put("brand",_product.getBrand());
-        }
-        else{
-            map.put("success",false);
-        }
-
+        map=cashierService.findProdByID(asin);
         return map;
     }
 
     @RequestMapping("/addOrder")
     @ResponseBody
     public Map<String, Object> addOrder(@RequestParam("user_id") String user_id, @RequestParam("prod_asin") String prod_asin,@RequestParam("num") int num){
-
         Map<String, Object> map = new HashMap<String, Object>();
-        int value = cashierService.addOrder(user_id,prod_asin,num);
-        map.put("value", value);
+        map=cashierService.addOrder(user_id,prod_asin,num);
         return map;
     }
 
     @RequestMapping("/updatePoints")
     @ResponseBody
     public Map<String, Object> updatePoints(@RequestParam ("user_id") String user_id,@RequestParam("total") int total){
-
-        customer _customer=cashierService.findCustomerByID(user_id);
-        int memb_points=_customer.getMemb_points();//会员原来的积分
-        memb_points += total ;
-
-        //更新会员积分
         Map<String, Object> map = new HashMap<String, Object>();
-        int value=cashierService.updatePoints(user_id,memb_points);
 
-        map.put("value",value);
-        return map;
+        if(total!=0){
+            Map<String, Object> _customer=cashierService.findCustomerByID(user_id);
+            int memb_points=(int)_customer.get("memb_points");//会员原来的积分
+            memb_points += total ;
+
+            //更新会员积分
+            map=cashierService.updatePoints(user_id,memb_points);
+        }else{
+            map.put("message","积分不为0，请确认积分信息");
+        }
+            return map;
     }
 
 

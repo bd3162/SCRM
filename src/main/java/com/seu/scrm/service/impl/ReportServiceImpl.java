@@ -1,5 +1,6 @@
 package com.seu.scrm.service.impl;
 
+import com.seu.scrm.dto.PersonRequest;
 import com.seu.scrm.service.ReportService;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,11 @@ import org.springframework.stereotype.Service;
 public class ReportServiceImpl implements ReportService {
 
     @Override
-    public String queryReport() {
-        return null;
+    public String queryReport(PersonRequest request) {
+        switch(request.getStatisDimens()){
+            case "brand":
+
+        }
+
     }
 }

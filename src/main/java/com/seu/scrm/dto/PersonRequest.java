@@ -19,8 +19,31 @@ public class PersonRequest {
     /**
      * 统计的子类别的数量
      * */
-    private String subNum;
+    private Integer subNum;
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getStatisDimens() {
+        return statisDimens;
+    }
+
+    public void setStatisDimens(String statisDimens) {
+        this.statisDimens = statisDimens;
+    }
+
+    public Integer getSubNum() {
+        return subNum;
+    }
+
+    public void setSubNum(Integer subNum) {
+        this.subNum = subNum;
+    }
 
     @Override
     public String toString() {

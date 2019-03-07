@@ -12,10 +12,6 @@ public class ReportServiceImpl implements ReportService {
 
     @Override
     public String queryReport(PersonRequest request) {
-        switch(request.getStatisDimens()){
-            case "brand":
-
-        }
-
+        return request.toString();
     }
 }

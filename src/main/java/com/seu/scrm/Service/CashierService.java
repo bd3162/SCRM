@@ -48,7 +48,7 @@ public class CashierService {
     }
 
     /**
-     * @Description: 添加订单的逻辑判断
+     * @Description: 添加订单
      * @Param:
      * @Return:
      * @Author: karin
@@ -125,4 +125,49 @@ public class CashierService {
         }
         return map;
     }
+
+
+    /**
+     * @Description: 更新用户验证码
+     * @Param:
+     * @Return:
+     * @Author: karin
+     */
+    public Map<String,Object> updateVerif(@RequestParam("user_id") String user_id, String verif){
+        Map<String, Object> map = new HashMap<String, Object>();
+
+         //验证码生成成功
+        if(verif!=null) {
+             //更新成功
+             if (cashMapper.updateVerif(user_id, verif)) {
+                 map.put("verif",verif);
+                 map.put("message", true);
+             } else {
+                 map.put("message", false);
+             }
+        }else {
+            map.put("message",false);
+        }
+        return map;
+    }
+
+
+    /**
+     * @Description: 更新用户open_id
+     * @Param:
+     * @Return:
+     * @Author: karin
+     */
+    public Map<String,Object> updateOpen_id(@RequestParam("open_id") String open_id, @RequestParam("verif") String verif){
+        Map<String, Object> map = new HashMap<String, Object>();
+        if(cashMapper.updateOpen_id(open_id,verif)) {
+            map.put("open_id",open_id);
+            map.put("verif",verif);
+            map.put("message", true);
+        } else {
+            map.put("message",false);
+        }
+        return map;
+    }
+
 }

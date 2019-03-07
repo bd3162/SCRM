@@ -19,7 +19,7 @@ public interface CashMapper {
     /**
      * @Description: 插入用户订单
      * @Param: user_id prod_sin num
-     * @Return: int (用于判断是否插入成功)
+     * @Return: boolean (用于判断是否插入成功)
      * @Author: karin
      */
 
@@ -27,9 +27,9 @@ public interface CashMapper {
     boolean addOrder(@Param("user_id") String user_id, @Param("prod_asin") String prod_id, @Param("num") int num);
 
     /**
-     * @Description: 查询用户当前积分
+     * @Description: 根据user_id查找用户的信息
      * @Param: user_id
-     * @Return: menb_points
+     * @Return: customer
      * @Author: karin
      */
     @Select("select * from customer where user_id = #{user_id}")
@@ -37,11 +37,38 @@ public interface CashMapper {
 
     /**
      * @Description: 修改会员用户的积分
-     * @Param:
+     * @Param: user_id memb_points
      * @Return:
      * @Author: karin
      */
     @Update("update customer set memb_points = ${memb_points} where user_id = #{user_id}")
     boolean updatePoints(@Param("user_id") String user_id, @Param("memb_points") int memb_points);
+
+    /**
+     * @Description: 给用户加验证码
+     * @Param: user_id verif
+     * @Return: 
+     * @Author: karin
+     */
+    @Update("update customer set verif = #{verif} where user_id = #{user_id}")
+    boolean updateVerif(@Param("user_id") String user_id,@Param("verif") String verif);
+
+    /**
+     * @Description: 根据verif查找用户的信息
+     * @Param: verif
+     * @Return: customer
+     * @Author: karin
+     */
+    @Select("select * from customer where verif = #{verif}")
+    customer findCustomerByVerif(@Param("verif") String verif);
+
+    /**
+     * @Description: 给用户加open_id
+     * @Param: open_id verif
+     * @Return: 
+     * @Author: karin
+     */
+    @Update("update customer set open_id = #{open_id} where verif = #{verif}")
+    boolean updateOpen_id(@Param("open_id") String open_id,@Param("verif") String verif);
 
 }

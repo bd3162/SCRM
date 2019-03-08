@@ -14,8 +14,9 @@ public class PersonReportServiceImpl implements PersonReportService{
 
 
     @Override
-    public List<CategorySales> queryCategorySales(String userId, int num) {
+    public List<List<CategorySales>> queryCategorySales(String userId, int num) {
         List<CategorySales> list = new ArrayList<CategorySales>();
+        List<List<CategorySales>> listList = new ArrayList<List<CategorySales>>();
 
         //Todo
         //测试代码，需要替换。
@@ -27,14 +28,15 @@ public class PersonReportServiceImpl implements PersonReportService{
             sales.setSalesAmount(sales.getSalesCount() * r.nextInt());
             list.add(sales);
         }
+        listList.add(list);
 
-        return list;
+        return listList;
     }
 
     @Override
-    public List<ProductSales> queryProductSales(String userId, int num) {
+    public List<List<ProductSales>> queryProductSales(String userId, int num) {
         List<ProductSales> list = new ArrayList<ProductSales>();
-
+        List<List<ProductSales>> listList = new ArrayList<List<ProductSales>>();
 
         //Todo
         //测试代码，需要替换。
@@ -46,14 +48,15 @@ public class PersonReportServiceImpl implements PersonReportService{
             sales.setSalesAmount(sales.getSalesCount() * r.nextInt(10000));
             list.add(sales);
         }
+        listList.add(list);
 
-        return list;
+        return listList;
     }
 
     @Override
-    public List<BrandSales> queryBrandSales(String userId, int num) {
+    public List<List<BrandSales>> queryBrandSales(String userId, int num) {
         List<BrandSales> list = new ArrayList<BrandSales>();
-
+        List<List<BrandSales>> listList = new ArrayList<List<BrandSales>>();
         //Todo
         //测试代码，需要替换。
         Random r=new Random();
@@ -64,13 +67,15 @@ public class PersonReportServiceImpl implements PersonReportService{
             sales.setSalesAmount(sales.getSalesCount() * r.nextInt(10000));
             list.add(sales);
         }
+        listList.add(list);
 
-        return list;
+        return listList;
     }
 
     @Override
-    public List<PriceSales> queryPriceSales(String userId, int num) {
+    public List<List<PriceSales>> queryPriceSales(String userId, int num) {
         List<PriceSales> list = new ArrayList<PriceSales>();
+        List<List<PriceSales>> listList = new ArrayList<List<PriceSales>>();
 
         //Todo
         //测试代码，需要替换。
@@ -78,18 +83,22 @@ public class PersonReportServiceImpl implements PersonReportService{
         for(int i=0; i < num; i++){
             PriceSales sales = new PriceSales();
             sales.setStartPrice(i * 1000);
-            sales.setStartPrice((i+1)*1000);
+            sales.setEndPrice((i+1)*1000);
             sales.setSalesCount(r.nextInt(1000));
             sales.setSalesAmount(sales.getSalesCount() * r.nextInt(10000));
             list.add(sales);
         }
 
-        return list;
+        listList.add(list);
+
+        return listList;
     }
 
     @Override
-    public List<Sales> queryTimeSales(String userId, int num) {
+    public List<List<Sales>> queryTimeSales(String userId, int num) {
         List<Sales> list = new ArrayList<Sales>();
+        List<List<Sales>> listList = new ArrayList<List<Sales>>();
+
 
         //Todo
         //测试代码，需要替换。
@@ -101,6 +110,8 @@ public class PersonReportServiceImpl implements PersonReportService{
             list.add(sales);
         }
 
-        return list;
+        listList.add(list);
+
+        return listList;
     }
 }

@@ -10,15 +10,15 @@ import java.util.List;
  */
 public interface PersonReportService {
 
-    List<CategorySales> queryCategorySales(String userId, int num);
+    List<List<CategorySales>> queryCategorySales(String userId, int num);
 
-    List<ProductSales> queryProductSales(String userId, int num);
+    List<List<ProductSales>> queryProductSales(String userId, int num);
 
-    List<BrandSales> queryBrandSales(String userId, int num);
+    List<List<BrandSales>> queryBrandSales(String userId, int num);
 
-    List<PriceSales> queryPriceSales(String userId, int num);
+    List<List<PriceSales>> queryPriceSales(String userId, int num);
 
-    List<Sales> queryTimeSales(String userId, int num);
+    List<List<Sales>> queryTimeSales(String userId, int num);
 
 
 }

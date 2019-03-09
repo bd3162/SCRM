@@ -1,9 +1,15 @@
 server:
   port: 8080
 
+#公共配置与profiles选择无关
+mybatis:
+  typeAliasesPackage: com.seu.scrm.Entity
+  mapperLocations: classpath:mapper/*.xml
+
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/scrm
+    url: jdbc:mysql://localhost:3306/scrm?serverTimezone=GMT%2B8
     username: root
-    password: 1996
+    password: 123456

@@ -1,9 +1,16 @@
 package com.seu.scrm.service;
 
 
+import com.seu.scrm.Entity.QuarterlyCategoryStats;
+import com.seu.scrm.Entity.QuarterlyCategoryStatsKey;
+import com.seu.scrm.Entity.QuarterlyProductStatsKey;
+import com.seu.scrm.Mapper.QuarterlyCategoryStatsMapper;
+import com.seu.scrm.Mapper.QuarterlyProductStatsMapper;
+import com.seu.scrm.Mapper.QuarterlyTotalStatsMapper;
 import com.seu.scrm.dto.CategorySales;
 import com.seu.scrm.dto.ProductSales;
 import com.seu.scrm.dto.Sales;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,6 +20,12 @@ import java.util.Random;
 @Service(value = "QuarterlyReportService")
 public class QuarterlyReportService {
 
+    @Autowired
+    QuarterlyCategoryStatsMapper quarterlyCategoryStatsMapper;
+    @Autowired
+    QuarterlyProductStatsMapper quarterlyProductStatsMapper;
+    @Autowired
+    QuarterlyTotalStatsMapper quarterlyTotalStatsMapper;
 
     /**
      * 获取一年四个季度的总的销量数据
@@ -21,17 +34,11 @@ public class QuarterlyReportService {
 
         List<List<Sales>> listList = new ArrayList<List<Sales>>();
 
-        //Todo
-        //测试代码，需要替换。
-        Random r=new Random(10000);
-        for(int i = 0; i < 4; i++) {
-            List<Sales> list = new ArrayList<Sales>();
-            for (int j = 0; j < num; j++) {
-                Sales sales = new Sales();
-                sales.setSalesCount(r.nextInt(1000));
-                sales.setSalesAmount(sales.getSalesCount() * r.nextInt(100));
-                list.add(sales);
-            }
+        //四个季度分别查询；最后合并成总表
+        //优化？？
+        for(int i = 1; i < 5; i++) {
+            //list里面存放着每个季度的销售数据，按照销量从多到少排名
+            List<Sales> list = quarterlyTotalStatsMapper.selectListByYear(year, i, num);
             listList.add(list);
         }
 
@@ -48,19 +55,11 @@ public class QuarterlyReportService {
         //listList里面是四个季度的类别销量数据，按照季度顺序从第一季度到第四季度
         List<List<CategorySales>> listList = new ArrayList<List<CategorySales>>();
 
-        //Todo
-        //测试代码，需要替换。
-        Random r=new Random(10000);
-        for(int i = 0; i < 4; i++) {
+        //四个季度分别查询；最后合并成总表
+        //优化？？
+        for(int i = 1; i < 5; i++) {
             //list里面存放着每个季度的类别数据，按照销量从多到少排名
-            List<CategorySales> list = new ArrayList<CategorySales>();
-            for (int j = 0; j < num; j++) {
-                CategorySales sales = new CategorySales();
-                sales.setCategory("Category_"+"quarter" + i + "_No" + j + "_" + r.nextInt(1000));
-                sales.setSalesCount(r.nextInt(1000));
-                sales.setSalesAmount(sales.getSalesCount() * r.nextInt(100));
-                list.add(sales);
-            }
+            List<CategorySales> list = quarterlyCategoryStatsMapper.selectListByYear(year, i, num);
             listList.add(list);
         }
 
@@ -76,23 +75,16 @@ public class QuarterlyReportService {
         //listList里面是四个季度的产品销量数据，按照季度顺序从第一季度到第四季度
         List<List<ProductSales>> listList = new ArrayList<List<ProductSales>>();
 
-        //Todo
-        //测试代码，需要替换。
-        Random r=new Random(10000);
-        for(int i = 0; i < 4; i++) {
+        //四个季度分别查询；最后合并成总表
+        //优化？？
+        for(int i = 1; i < 5; i++) {
             //list里面存放着每个季度的产品数据，按照销量从多到少排名
-            List<ProductSales> list = new ArrayList<ProductSales>();
-            for (int j = 0; j < num; j++) {
-                ProductSales sales = new ProductSales();
-                sales.setProduct("Prouduct_"+"quarter" + i + "_No" + j + "_" + r.nextInt(1000));
-                sales.setSalesCount(r.nextInt(1000));
-                sales.setSalesAmount(sales.getSalesCount() * r.nextInt(100));
-                list.add(sales);
-            }
+            List<ProductSales> list = quarterlyProductStatsMapper.selectListByYear(year, i, num);
             listList.add(list);
         }
 
         return listList;
+
     }
 
 
@@ -103,18 +95,12 @@ public class QuarterlyReportService {
 
         List<List<CategorySales>> listList = new ArrayList<List<CategorySales>>();
 
-        //Todo
-        //测试代码，需要替换。
-        Random r=new Random(10000);
-        for(int i = 0; i < 4; i++) {
-            List<CategorySales> list = new ArrayList<CategorySales>();
-            for (int j = 0; j < num; j++) {
-                CategorySales sales = new CategorySales();
-                sales.setCategory("Category_"+"quarter" + i + "_No" + j + "_" + r.nextInt(1000));
-                sales.setSalesCount(r.nextInt(1000));
-                sales.setSalesAmount(sales.getSalesCount() * r.nextInt(100));
-                list.add(sales);
-            }
+        //四个季度分别查询；最后合并成总表
+        //优化？？
+        for(int i = 1; i < 5; i++) {
+            //list里面存放着每个季度的产品数据，按照销量从多到少排名
+            List<CategorySales> list = quarterlyCategoryStatsMapper
+                    .selectSingleCategorySalesByYear(year, i, category, num);
             listList.add(list);
         }
 
@@ -130,22 +116,13 @@ public class QuarterlyReportService {
         //listList里面是四个季度的产品销量数据，按照季度顺序从第一季度到第四季度
         List<List<ProductSales>> listList = new ArrayList<List<ProductSales>>();
 
-        //Todo
-        //测试代码，需要替换。
-        Random r=new Random(10000);
-        for(int i = 0; i < 4; i++) {
+        //四个季度分别查询；最后合并成总表
+        //优化？？
+        for(int i = 1; i < 5; i++) {
             //list里面存放着每个季度的产品数据，按照销量从多到少排名
-            List<ProductSales> list = new ArrayList<ProductSales>();
-            for (int j = 0; j < num; j++) {
-                ProductSales sales = new ProductSales();
-                sales.setProduct("Prouduct_"+"quarter" + i + "_No" + j + "_" + r.nextInt(1000));
-                sales.setSalesCount(r.nextInt(1000));
-                sales.setSalesAmount(sales.getSalesCount() * r.nextInt(100));
-                list.add(sales);
-            }
+            List<ProductSales> list = quarterlyProductStatsMapper.selectCategoryProductListByYear(year, i, category, num);
             listList.add(list);
         }
-
         return listList;
     }
 
@@ -155,22 +132,14 @@ public class QuarterlyReportService {
      * */
     public List<List<ProductSales>> queryProductSales(String year, String product, int num){
 
-        //listList里面是四个季度的产品销量数据，按照季度顺序从第一季度到第四季度
         List<List<ProductSales>> listList = new ArrayList<List<ProductSales>>();
 
-        //Todo
-        //测试代码，需要替换。
-        Random r=new Random(10000);
-        for(int i = 0; i < 4; i++) {
+        //四个季度分别查询；最后合并成总表
+        //优化？？
+        for(int i = 1; i < 5; i++) {
             //list里面存放着每个季度的产品数据，按照销量从多到少排名
-            List<ProductSales> list = new ArrayList<ProductSales>();
-            for (int j = 0; j < num; j++) {
-                ProductSales sales = new ProductSales();
-                sales.setProduct("Prouduct_"+"quarter" + i + "_No" + j + "_" + r.nextInt(1000));
-                sales.setSalesCount(r.nextInt(1000));
-                sales.setSalesAmount(sales.getSalesCount() * r.nextInt(100));
-                list.add(sales);
-            }
+            List<ProductSales> list = quarterlyProductStatsMapper
+                    .selectSingleProductSalesByYear(year, i, product, num);
             listList.add(list);
         }
 

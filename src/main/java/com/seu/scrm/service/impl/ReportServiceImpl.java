@@ -158,13 +158,13 @@ public class ReportServiceImpl implements ReportService {
         switch(type){
             case "total":
                 System.out.println("subType = " + subType);
-                if(subType.toLowerCase().equals("category")){
+                if(subType != null && subType.toLowerCase().equals("category")){
                     List<List<CategorySales>> categorySalesList
                             = quarterlyReportService.queryAllCategorySales(
                                     request.getYear(), request.getSubNum());
                     stat.setCategorySalesList(categorySalesList);
                 }
-                else if(subType.toLowerCase().equals("product")){
+                else if(subType != null && subType.toLowerCase().equals("product")){
                     List<List<ProductSales>> productSalesList
                             = quarterlyReportService.queryAllProductSales(
                             request.getYear(), request.getSubNum());
@@ -181,7 +181,7 @@ public class ReportServiceImpl implements ReportService {
                 break;
 
             case "category":
-                if(subType.toLowerCase().equals("product")){
+                if(subType != null && subType.toLowerCase().equals("product")){
                     List<List<ProductSales>> productSalesList
                             = quarterlyReportService.queryCategoryProductSales(
                             request.getYear(), request.getDimensParam(),request.getSubNum());

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seu.scrm.Mapper.HotCategoryStatsMapper">
+  <resultMap id="BaseResultMap" type="com.seu.scrm.Entity.HotCategoryStats">
+    <id column="period" jdbcType="INTEGER" property="period" />
+    <id column="category" jdbcType="VARCHAR" property="category" />
+    <result column="sales_count" jdbcType="INTEGER" property="salesCount" />
+    <result column="sales_amount" jdbcType="INTEGER" property="salesAmount" />
+    <result column="count_time" jdbcType="TIMESTAMP" property="countTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    period, category, sales_count, sales_amount, count_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.seu.scrm.Entity.HotCategoryStatsKey" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from hot_category_stats
+    where period = #{period,jdbcType=INTEGER}
+      and category = #{category,jdbcType=VARCHAR}
+  </select>
+  <select id="selectListByPeriod" resultMap="BaseResultMap">
+    select
+    category, sales_count, sales_amount
+    from hot_category_stats
+    where period = ${period}
+    order by sales_count desc
+    limit ${num}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="com.seu.scrm.Entity.HotCategoryStatsKey">
+    delete from hot_category_stats
+    where period = #{period,jdbcType=INTEGER}
+      and category = #{category,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.seu.scrm.Entity.HotCategoryStats">
+    insert into hot_category_stats (period, category, sales_count, 
+      sales_amount, count_time)
+    values (#{period,jdbcType=INTEGER}, #{category,jdbcType=VARCHAR}, #{salesCount,jdbcType=INTEGER}, 
+      #{salesAmount,jdbcType=INTEGER}, #{countTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.seu.scrm.Entity.HotCategoryStats">
+    insert into hot_category_stats
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="period != null">
+        period,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+      <if test="salesCount != null">
+        sales_count,
+      </if>
+      <if test="salesAmount != null">
+        sales_amount,
+      </if>
+      <if test="countTime != null">
+        count_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="period != null">
+        #{period,jdbcType=INTEGER},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="salesCount != null">
+        #{salesCount,jdbcType=INTEGER},
+      </if>
+      <if test="salesAmount != null">
+        #{salesAmount,jdbcType=INTEGER},
+      </if>
+      <if test="countTime != null">
+        #{countTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.seu.scrm.Entity.HotCategoryStats">
+    update hot_category_stats
+    <set>
+      <if test="salesCount != null">
+        sales_count = #{salesCount,jdbcType=INTEGER},
+      </if>
+      <if test="salesAmount != null">
+        sales_amount = #{salesAmount,jdbcType=INTEGER},
+      </if>
+      <if test="countTime != null">
+        count_time = #{countTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where period = #{period,jdbcType=INTEGER}
+      and category = #{category,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.seu.scrm.Entity.HotCategoryStats">
+    update hot_category_stats
+    set sales_count = #{salesCount,jdbcType=INTEGER},
+      sales_amount = #{salesAmount,jdbcType=INTEGER},
+      count_time = #{countTime,jdbcType=TIMESTAMP}
+    where period = #{period,jdbcType=INTEGER}
+      and category = #{category,jdbcType=VARCHAR}
+  </update>
+</mapper>

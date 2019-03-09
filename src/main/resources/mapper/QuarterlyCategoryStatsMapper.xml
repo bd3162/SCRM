@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seu.scrm.Mapper.QuarterlyCategoryStatsMapper">
+  <resultMap id="BaseResultMap" type="com.seu.scrm.Entity.QuarterlyCategoryStats">
+    <id column="year" jdbcType="VARCHAR" property="year" />
+    <id column="quarter" jdbcType="INTEGER" property="quarter" />
+    <id column="category" jdbcType="VARCHAR" property="category" />
+    <result column="sales_count" jdbcType="INTEGER" property="salesCount" />
+    <result column="sales_amount" jdbcType="INTEGER" property="salesAmount" />
+    <result column="count_time" jdbcType="TIMESTAMP" property="countTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    year, quarter, category, sales_count, sales_amount, count_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.seu.scrm.Entity.QuarterlyCategoryStatsKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from quarterly_category_stats
+    where year = #{year,jdbcType=VARCHAR}
+      and quarter = #{quarter,jdbcType=INTEGER}
+      and category = #{category,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectListByYear" resultMap="BaseResultMap">
+    select
+    category, sales_count, sales_amount
+    from quarterly_category_stats
+    where year = ${year} and quarter = ${quarter}
+    order by sales_count desc
+    limit ${num}
+  </select>
+
+    <select id="selectSingleCategorySalesByYear" resultMap="BaseResultMap">
+    select
+    category, sales_count, sales_amount
+    from quarterly_category_stats
+    where year = ${year}
+    and quarter = ${quarter}
+    and category = ${category}
+    order by sales_count desc
+    limit ${num}
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="com.seu.scrm.Entity.QuarterlyCategoryStatsKey">
+    delete from quarterly_category_stats
+    where year = #{year,jdbcType=VARCHAR}
+      and quarter = #{quarter,jdbcType=INTEGER}
+      and category = #{category,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.seu.scrm.Entity.QuarterlyCategoryStats">
+    insert into quarterly_category_stats (year, quarter, category, 
+      sales_count, sales_amount, count_time
+      )
+    values (#{year,jdbcType=VARCHAR}, #{quarter,jdbcType=INTEGER}, #{category,jdbcType=VARCHAR}, 
+      #{salesCount,jdbcType=INTEGER}, #{salesAmount,jdbcType=INTEGER}, #{countTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.seu.scrm.Entity.QuarterlyCategoryStats">
+    insert into quarterly_category_stats
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="year != null">
+        year,
+      </if>
+      <if test="quarter != null">
+        quarter,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+      <if test="salesCount != null">
+        sales_count,
+      </if>
+      <if test="salesAmount != null">
+        sales_amount,
+      </if>
+      <if test="countTime != null">
+        count_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="year != null">
+        #{year,jdbcType=VARCHAR},
+      </if>
+      <if test="quarter != null">
+        #{quarter,jdbcType=INTEGER},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="salesCount != null">
+        #{salesCount,jdbcType=INTEGER},
+      </if>
+      <if test="salesAmount != null">
+        #{salesAmount,jdbcType=INTEGER},
+      </if>
+      <if test="countTime != null">
+        #{countTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.seu.scrm.Entity.QuarterlyCategoryStats">
+    update quarterly_category_stats
+    <set>
+      <if test="salesCount != null">
+        sales_count = #{salesCount,jdbcType=INTEGER},
+      </if>
+      <if test="salesAmount != null">
+        sales_amount = #{salesAmount,jdbcType=INTEGER},
+      </if>
+      <if test="countTime != null">
+        count_time = #{countTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where year = #{year,jdbcType=VARCHAR}
+      and quarter = #{quarter,jdbcType=INTEGER}
+      and category = #{category,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.seu.scrm.Entity.QuarterlyCategoryStats">
+    update quarterly_category_stats
+    set sales_count = #{salesCount,jdbcType=INTEGER},
+      sales_amount = #{salesAmount,jdbcType=INTEGER},
+      count_time = #{countTime,jdbcType=TIMESTAMP}
+    where year = #{year,jdbcType=VARCHAR}
+      and quarter = #{quarter,jdbcType=INTEGER}
+      and category = #{category,jdbcType=VARCHAR}
+  </update>
+</mapper>

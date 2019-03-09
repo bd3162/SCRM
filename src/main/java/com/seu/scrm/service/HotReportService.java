@@ -1,6 +1,11 @@
 package com.seu.scrm.service;
 
+import com.seu.scrm.Entity.HotCategoryStats;
+import com.seu.scrm.Mapper.HotBrandStatsMapper;
+import com.seu.scrm.Mapper.HotCategoryStatsMapper;
+import com.seu.scrm.Mapper.HotProductStatsMapper;
 import com.seu.scrm.dto.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,57 +20,54 @@ import java.util.Random;
 @Service(value = "HotReportService")
 public class HotReportService {
 
+    @Autowired
+    private HotCategoryStatsMapper hotCategoryStatsMapper;
+    @Autowired
+    private HotProductStatsMapper hotProductStatsMapper;
+    @Autowired
+    private HotBrandStatsMapper hotBrandStatsMapper;
+
+    /**
+     *
+     * @param period
+     * @param num
+     * @return
+     */
     public List<List<CategorySales>> queryCategorySales(int period, int num){
-        List<CategorySales> list = new ArrayList<CategorySales>();
         List<List<CategorySales>> listList = new ArrayList<List<CategorySales>>();
 
-        //Todo
-        //测试代码，需要替换。
-        Random r=new Random(10000);
-        for(int i=0; i < num; i++){
-            CategorySales sales = new CategorySales();
-            sales.setCategory( "Category_" + r.nextInt(10000));
-            sales.setSalesCount(r.nextInt(1000));
-            sales.setSalesAmount(sales.getSalesCount() * r.nextInt(10000));
-            list.add(sales);
-        }
+        List<CategorySales> list  = hotCategoryStatsMapper.selectListByPeriod(period, num);
         listList.add(list);
 
         return listList;
     }
 
+    /**
+     *
+     * @param period
+     * @param num
+     * @return
+     */
     public List<List<ProductSales>> queryProductSales(int period, int num){
-        List<ProductSales> list = new ArrayList<ProductSales>();
         List<List<ProductSales>> listList = new ArrayList<List<ProductSales>>();
 
-        //Todo
-        //测试代码，需要替换。
-        Random r=new Random();
-        for(int i=0; i < num; i++){
-            ProductSales sales = new ProductSales();
-            sales.setProduct("Product_" + r.nextInt(10000));
-            sales.setSalesCount(r.nextInt(1000) + 1);
-            sales.setSalesAmount(sales.getSalesCount() * r.nextInt(10000));
-            list.add(sales);
-        }
+        List<ProductSales> list  = hotProductStatsMapper.selectListByPeriod(period, num);
         listList.add(list);
 
         return listList;
     }
 
+    /**
+     *
+     * @param period
+     * @param num
+     * @return
+     */
     public List<List<BrandSales>> queryBrandSales(int period, int num){
-        List<BrandSales> list = new ArrayList<BrandSales>();
         List<List<BrandSales>> listList = new ArrayList<List<BrandSales>>();
-        //Todo
-        //测试代码，需要替换。
-        Random r=new Random();
-        for(int i=0; i < num; i++){
-            BrandSales sales = new BrandSales();
-            sales.setBrand("Brand_" + r.nextInt(10000));
-            sales.setSalesCount(r.nextInt(1000) + 1);
-            sales.setSalesAmount(sales.getSalesCount() * r.nextInt(10000));
-            list.add(sales);
-        }
+
+        List<BrandSales> list = hotBrandStatsMapper.selectListByPeriod(period, num);
+
         listList.add(list);
 
         return listList;

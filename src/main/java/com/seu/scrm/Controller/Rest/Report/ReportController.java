@@ -4,11 +4,12 @@ import com.seu.scrm.dto.HotRequest;
 import com.seu.scrm.dto.PersonRequest;
 import com.seu.scrm.dto.QuarterlyRequest;
 import com.seu.scrm.service.ReportService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-import java.util.logging.Logger;
 
 /**
  * Created by chenxiaosuo on 2019/3/6.
@@ -19,6 +20,7 @@ public class ReportController {
     @Autowired
     private ReportService reportService;
 
+    private final static Logger logger = LoggerFactory.getLogger(ReportController.class);
 
     @RequestMapping(value = "/rest/report/person", method = RequestMethod.POST)
     public String queryPersonStatistics(@RequestBody PersonRequest personRequest){

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seu.scrm.Mapper.PersonStatsMapper">
+  <resultMap id="BaseResultMap" type="com.seu.scrm.Entity.orders">
+    <id column="user_id" jdbcType="VARCHAR" property="userId" />
+    <id column="prod_asin" jdbcType="VARCHAR" property="prodAsin" />
+    <result column="rate" jdbcType="INTEGER" property="rate" />
+    <result column="unix_time" jdbcType="INTEGER" property="unixTime" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    user_id, prod_asin, rate, unix_time, num
+  </sql>
+  <select id="selectCategorySalesById" resultMap="BaseResultMap">
+    select
+    brand, sales_count, sales_amount
+    from hot_brand_stats
+    where period = ${period}
+    order by sales_count desc
+    limit ${num}
+  </select>
+
+</mapper>

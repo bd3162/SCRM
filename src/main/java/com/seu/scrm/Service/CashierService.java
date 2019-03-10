@@ -61,10 +61,10 @@ public class CashierService {
             product _product = cashMapper.findProdByID(prod_asin);
             //商品不存在
             if(_product == null){
-                map.put("message",true);
+                map.put("message",false);
             }
             else if(cashMapper.addOrder(user_id, prod_asin, num)){
-                map.put("message",false);
+                map.put("message",true);
             }else {
                 map.put("message",false);
             }

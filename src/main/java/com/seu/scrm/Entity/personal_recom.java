@@ -1,6 +1,6 @@
 package com.seu.scrm.Entity;
 
-public class personal_recom {
+public class Personal_recom {
     private int user_id;
     private String prod_asin;
     private double rank;

@@ -1,6 +1,6 @@
 package com.seu.scrm.Entity;
 
-public class common_recom {
+public class Common_recom {
     private String prod_asin;
     private int update_time;
 

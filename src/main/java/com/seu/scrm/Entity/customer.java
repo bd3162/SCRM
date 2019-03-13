@@ -1,8 +1,8 @@
 package com.seu.scrm.Entity;
 
-public class customer {
+public class Customer {
     private String user_id;
-    private int face_id;
+    private String  verif;
     private String open_id;
     private int memb_points;
 
@@ -14,12 +14,12 @@ public class customer {
         this.user_id = user_id;
     }
 
-    public int getFace_id() {
-        return face_id;
+    public String getVerif() {
+        return verif;
     }
 
-    public void setFace_id(int face_id) {
-        this.face_id = face_id;
+    public void setVerif(String verif) {
+        this.verif = verif;
     }
 
     public String getOpen_id() {

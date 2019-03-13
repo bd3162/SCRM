@@ -1,6 +1,6 @@
 package com.seu.scrm.Entity;
 
-public class product {
+public class Product {
     private String asin;
     private String title;
     private double price;

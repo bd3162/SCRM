@@ -1,6 +1,6 @@
 package com.seu.scrm.Entity;
 
-public class orders {
+public class Orders {
     private String user_id;
     private String prod_asin;
     private int rate;

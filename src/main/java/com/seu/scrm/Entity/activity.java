@@ -1,12 +1,12 @@
 package com.seu.scrm.Entity;
 
-public class activity {
+public class Activity {
     private int id;
     private String activ_title;
     private String activ_img;
     private String activ_desc;
-    private String start_time;
-    private String end_time;
+    private int  start_date;
+    private int  end_date;
 
     public int getId() {
         return id;
@@ -40,19 +40,19 @@ public class activity {
         this.activ_desc = activ_desc;
     }
 
-    public String getStart_time() {
-        return start_time;
+    public int getStart_date() {
+        return start_date;
     }
 
-    public void setStart_time(String start_time) {
-        this.start_time = start_time;
+    public void setStart_date(int start_date) {
+        this.start_date = start_date;
     }
 
-    public String getEnd_time() {
-        return end_time;
+    public int getEnd_date() {
+        return end_date;
     }
 
-    public void setEnd_time(String end_time) {
-        this.end_time = end_time;
+    public void setEnd_date(int end_date) {
+        this.end_date = end_date;
     }
 }

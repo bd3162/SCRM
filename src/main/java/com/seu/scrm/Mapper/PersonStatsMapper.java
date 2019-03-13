@@ -34,7 +34,7 @@ public interface PersonStatsMapper {
 
 
     /**
-     * 获取单个用户的不同的小时的产品统计信息
+     * 获取单个用户在一周内不同时间的购买记录统计信息
      * @param userId
      * @param num
      * @return

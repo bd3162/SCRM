@@ -12,12 +12,92 @@
     user_id, prod_asin, rate, unix_time, num
   </sql>
   <select id="selectCategorySalesById" resultMap="BaseResultMap">
-    select
-    brand, sales_count, sales_amount
-    from hot_brand_stats
-    where period = ${period}
-    order by sales_count desc
-    limit ${num}
+    SELECT
+    p.cate AS category,
+    sum(od.num) AS sales_count,
+    sum(od.price) AS sales_amount
+    FROM
+    orders_totalprice od,
+    product p
+    WHERE
+    od.user_id = #{userId,jdbcType=VARCHAR}
+    AND p.asin = od.asin
+    GROUP BY
+    p.cate
+    ORDER BY
+    sum(od.num) DESC
+    LIMIT #{num,jdbcType=INTEGER};
+  </select>
+
+  <select id="selectBrandSalesById" resultMap="BaseResultMap">
+    SELECT
+        p.brand AS brand,
+        sum(od.num) AS sales_count,
+        sum(od.price) AS sales_amount
+    FROM
+        orders_totalprice od,
+        product p
+    WHERE
+        od.user_id = #{userId,jdbcType=VARCHAR}
+    AND p.asin = od.asin
+    GROUP BY
+        p.brand
+    ORDER BY
+        sum(od.num) DESC
+    LIMIT #{num,jdbcType=INTEGER};
+  </select>
+
+  <select id="selectProductSalesById" resultMap="BaseResultMap">
+    SELECT
+        p.asin,
+        p.title AS product,
+        sum(od.num) AS sales_count,
+        sum(od.price) AS sales_amount
+    FROM
+        orders_totalprice od,
+        product p
+    WHERE
+        od.user_id = #{userId,jdbcType=VARCHAR}
+    AND p.asin = od.asin
+    GROUP BY
+        od.asin
+    ORDER BY
+        sum(od.num) DESC
+    LIMIT #{num,jdbcType=INTEGER};
+  </select>
+
+  <select id="selectTimeSalesById" resultMap="BaseResultMap">
+    SELECT
+        DAYOFWEEK(FROM_UNIXTIME(od.unix_time)) AS weekday,
+        sum(od.num) AS sales_count,
+        sum(od.price) AS sales_amount
+    FROM
+        orders_totalprice od,
+        product p
+    WHERE
+        od.user_id = #{userId,jdbcType=VARCHAR}
+    AND p.asin = od.asin
+    GROUP BY
+        DAYOFWEEK(FROM_UNIXTIME(od.unix_time))
+    ORDER BY
+        DAYOFWEEK(FROM_UNIXTIME(od.unix_time)) ASC;
+  </select>
+
+  <select id="selectPriceSalesById" resultMap="BaseResultMap">
+    SELECT
+        INTERVAL(od.unit_price, 0, 0.01,50,200,500) as i_p,
+        sum(od.num) AS sales_count,
+        sum(od.price) AS sales_amount
+    FROM
+        orders_totalprice od,
+        product p
+    WHERE
+        od.user_id = #{userId,jdbcType=VARCHAR}
+    AND p.asin = od.asin
+    GROUP BY
+        i_p
+    ORDER BY
+        i_p ASC;
   </select>
 
 </mapper>

@@ -1,9 +1,9 @@
-package com.seu.scrm.Controller;
+package com.seu.scrm.Controller.Order;
 
 
 import com.seu.scrm.Entity.Product;
 import com.seu.scrm.Entity.Orders;
-import com.seu.scrm.service.order.HotGoodsService;
+import com.seu.scrm.Service.order.HotGoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

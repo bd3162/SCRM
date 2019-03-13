@@ -1,4 +1,4 @@
-package com.seu.scrm.Service;
+package com.seu.scrm.Service.order;
 
 
 import com.seu.scrm.Entity.Orders;

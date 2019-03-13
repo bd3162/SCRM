@@ -1,6 +1,6 @@
 package com.seu.scrm.Controller.Cashier;
 
-import com.seu.scrm.Entity.product;
+import com.seu.scrm.Entity.Product;
 import com.seu.scrm.Mapper.CashMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +18,7 @@ public class CashController {
     private CashMapper cashMapper;
 
     @RequestMapping(value = "/findProd")
-    public List<product> findProdByID(@RequestParam("asin") String asin){
+    public List<Product> findProdByID(@RequestParam("asin") String asin){
         return cashMapper.findProdByID(asin);
     }
 

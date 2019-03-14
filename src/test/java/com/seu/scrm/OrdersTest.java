@@ -1,6 +1,6 @@
 package com.seu.scrm;
 
-import com.seu.scrm.Controller.minProgram.OrdersController;
+import com.seu.scrm.Controller.minProgram.PhxOrdersController;
 import com.seu.scrm.Entity.OrderGroupWare;
 import com.seu.scrm.Entity.Orders;
 import com.seu.scrm.Entity.Product;
@@ -18,7 +18,7 @@ public class OrdersTest extends ScrmApplicationTests {
     @Autowired
     private OrdersService ordersService;
     @Autowired
-    private OrdersController ordersController;
+    private PhxOrdersController ordersController;
     //@Test
     public  void testgetOrders(){
         System.out.println(ordersController.selectCustomerByOpenId("oyPj64t9XG6uf6-vnTvZoIydy2Ys"));

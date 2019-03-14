@@ -1,9 +1,9 @@
-package com.seu.scrm.Controller;
+package com.seu.scrm.Controller.Order;
 
 
 import com.seu.scrm.Entity.Product;
 import com.seu.scrm.Entity.Orders;
-import com.seu.scrm.service.order.HotGoodsService;
+import com.seu.scrm.Service.order.HotGoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,15 +21,16 @@ public class OrdersController {
     public  Map<String,Object> selectOrdersById(String id){
         Orders orders=hotGoodsService.selectOrdersById(id);
         if(orders==null) {
-            List<Product> list =hotGoodsService.selectHotGoods();
+            List<Product> listProduct =hotGoodsService.selectHotGoods();
             Map<String,Object> map=new HashMap<>();
-            map.put("list",list);
+            map.put("热点商品",listProduct);
+            //System.out.println();
             return  map ;
         }
         else{
-            List<Product> list =hotGoodsService.selectRecommend(id);
+            List<Product> listProduct =hotGoodsService.selectRecommend(id);
             Map<String,Object> map=new HashMap<>();
-            map.put("list",list);
+            map.put("个人推荐商品",listProduct);
             return map;
         }
 

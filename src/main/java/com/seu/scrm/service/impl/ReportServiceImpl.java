@@ -1,7 +1,7 @@
-package com.seu.scrm.service.impl;
+package com.seu.scrm.Service.impl;
 
 import com.seu.scrm.dto.PersonRequest;
-import com.seu.scrm.service.ReportService;
+import com.seu.scrm.Service.ReportService;
 import org.springframework.stereotype.Service;
 
 /**

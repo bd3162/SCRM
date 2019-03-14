@@ -4,6 +4,7 @@ import com.seu.scrm.Entity.Customer;
 import com.seu.scrm.Entity.Product;
 
 import org.apache.ibatis.annotations.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public interface CashMapper {
      * @param asin
      * @return product
      */
+
     @Select("select * from product where asin = #{asin}")
     Product findProdByID(@Param("asin") String asin);
 

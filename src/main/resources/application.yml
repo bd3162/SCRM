@@ -4,6 +4,6 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/scrm
+    url: jdbc:mysql://localhost:3306/scrm?serverTimezone=GMT%2B8
     username: root
-    password: 1996
+    password: SCRMbd3162.

@@ -36,9 +36,8 @@
     from quarterly_category_stats
     where year = ${year}
     and quarter = ${quarter}
-    and category = ${category}
+    and category = #{category}
     order by sales_count desc
-    limit ${num}
   </select>
 
 

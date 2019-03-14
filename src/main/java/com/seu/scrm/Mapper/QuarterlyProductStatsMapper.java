@@ -43,13 +43,11 @@ public interface QuarterlyProductStatsMapper {
      * @param year
      * @param quarter
      * @param product
-     * @param num
      * @return
      */
     List<ProductSales> selectSingleProductSalesByYear(@Param("year") String year,
                                                       @Param("quarter") int quarter,
-                                                      @Param("product") String product,
-                                                      @Param("num") int num);
+                                                      @Param("product") String product);
 
     int updateByPrimaryKeySelective(QuarterlyProductStats record);
 

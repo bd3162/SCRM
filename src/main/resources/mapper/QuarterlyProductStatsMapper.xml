@@ -36,7 +36,7 @@
     from quarterly_product_stats p, prodcate pc
     where p.year = ${year}
     and p.quarter = ${quarter}
-    and pc.category = ${category}
+    and pc.category = #{category}
     and p.product = pc.product_asin
     order by sales_count desc
     limit ${num}
@@ -48,9 +48,8 @@
     from quarterly_product_stats
     where year = ${year}
     and quarter = ${quarter}
-    and product = ${product}
+    and product = #{product}
     order by sales_count desc
-    limit ${num}
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="com.seu.scrm.Entity.QuarterlyProductStatsKey">

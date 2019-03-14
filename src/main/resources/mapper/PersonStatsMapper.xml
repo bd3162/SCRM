@@ -57,13 +57,13 @@
         orders_totalprice od,
         product p
     WHERE
-        od.user_id = #{userId,jdbcType=VARCHAR}
+        od.user_id = #{userId}
     AND p.asin = od.asin
     GROUP BY
         od.asin
     ORDER BY
         sum(od.num) DESC
-    LIMIT #{num,jdbcType=INTEGER};
+    LIMIT ${num};
   </select>
 
   <select id="selectTimeSalesById" resultMap="BaseResultMap">

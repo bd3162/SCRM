@@ -33,13 +33,11 @@ public interface QuarterlyCategoryStatsMapper {
       * @param year
      * @param quarter
      * @param category
-     * @param num
      * @return
      */
     List<CategorySales> selectSingleCategorySalesByYear( @Param("year") String year,
                                                          @Param("quarter") int quarter,
-                                                         @Param("category") String category,
-                                                         @Param("num") int num);
+                                                         @Param("category") String category);
 
     int updateByPrimaryKeySelective(QuarterlyCategoryStats record);
 

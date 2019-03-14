@@ -191,7 +191,7 @@ public class ReportServiceImpl implements ReportService {
                 {
                     List<List<CategorySales>> categorySalesList =
                             quarterlyReportService.queryCategorySales(
-                                    request.getYear(), request.getDimensParam(),request.getSubNum());
+                                    request.getYear(), request.getDimensParam());
                     stat.setCategorySalesList(categorySalesList);
                 }
                 break;
@@ -199,7 +199,7 @@ public class ReportServiceImpl implements ReportService {
             case "product":
                 List<List<ProductSales>> productSalesList =
                         quarterlyReportService.queryProductSales(request.getYear(),
-                                request.getDimensParam(), request.getSubNum());
+                                request.getDimensParam());
                 stat.setProductSalesList(productSalesList);
                 break;
 

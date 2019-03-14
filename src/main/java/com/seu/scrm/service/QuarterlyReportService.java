@@ -91,7 +91,7 @@ public class QuarterlyReportService {
     /**
      * 获取一年四个季度的某一个类别的统计数据
      * */
-    public List<List<CategorySales>> queryCategorySales(String year, String category, int num){
+    public List<List<CategorySales>> queryCategorySales(String year, String category){
 
         List<List<CategorySales>> listList = new ArrayList<List<CategorySales>>();
 
@@ -100,7 +100,7 @@ public class QuarterlyReportService {
         for(int i = 1; i < 5; i++) {
             //list里面存放着每个季度的产品数据，按照销量从多到少排名
             List<CategorySales> list = quarterlyCategoryStatsMapper
-                    .selectSingleCategorySalesByYear(year, i, category, num);
+                    .selectSingleCategorySalesByYear(year, i, category);
             listList.add(list);
         }
 
@@ -130,7 +130,7 @@ public class QuarterlyReportService {
     /**
      * 获取一年四个季度的某个产品的销量数据
      * */
-    public List<List<ProductSales>> queryProductSales(String year, String product, int num){
+    public List<List<ProductSales>> queryProductSales(String year, String product){
 
         List<List<ProductSales>> listList = new ArrayList<List<ProductSales>>();
 
@@ -139,7 +139,7 @@ public class QuarterlyReportService {
         for(int i = 1; i < 5; i++) {
             //list里面存放着每个季度的产品数据，按照销量从多到少排名
             List<ProductSales> list = quarterlyProductStatsMapper
-                    .selectSingleProductSalesByYear(year, i, product, num);
+                    .selectSingleProductSalesByYear(year, i, product);
             listList.add(list);
         }
 

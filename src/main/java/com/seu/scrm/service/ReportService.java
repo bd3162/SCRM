@@ -1,4 +1,4 @@
-package com.seu.scrm.Service;
+package com.seu.scrm.service;
 
 import com.seu.scrm.dto.HotRequest;
 import com.seu.scrm.dto.PersonRequest;

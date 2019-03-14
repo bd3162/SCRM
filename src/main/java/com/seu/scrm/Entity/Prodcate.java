@@ -1,6 +1,6 @@
 package com.seu.scrm.Entity;
 
-public class prodcate {
+public class Prodcate {
     private String product_asin; // 商品ID
     private String category; // 细分类别
 

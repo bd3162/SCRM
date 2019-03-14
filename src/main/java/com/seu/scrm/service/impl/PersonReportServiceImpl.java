@@ -3,6 +3,8 @@ package com.seu.scrm.service.impl;
 import com.seu.scrm.Mapper.PersonStatsMapper;
 import com.seu.scrm.dto.*;
 import com.seu.scrm.service.PersonReportService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,8 @@ import java.util.*;
 @Service(value = "PersonReportService")
 public class PersonReportServiceImpl implements PersonReportService{
 
+
+    private final static Logger logger = org.slf4j.LoggerFactory.getLogger(PersonReportServiceImpl.class);
     @Autowired
     private PersonStatsMapper personStatsMapper;
 
@@ -34,6 +38,7 @@ public class PersonReportServiceImpl implements PersonReportService{
         List<ProductSales> list = new ArrayList<ProductSales>();
         List<List<ProductSales>> listList = new ArrayList<List<ProductSales>>();
 
+        logger.info("userId: " +userId + " num:"+ num);
         list = personStatsMapper.selectProductSalesById(userId, num);
         listList.add(list);
 
@@ -55,8 +60,14 @@ public class PersonReportServiceImpl implements PersonReportService{
     public List<List<PriceSales>> queryPriceSales(String userId, int num) {
         List<PriceSales> list = new ArrayList<PriceSales>();
         List<List<PriceSales>> listList = new ArrayList<List<PriceSales>>();
+        Integer[] startPriceList = new Integer[]{0, 1, 50, 200, 500};
+        Integer[] endPriceList = new Integer[]{0, 50, 200, 500, 1000};
 
         list = personStatsMapper.selectPriceSalesById(userId, num);
+        for(int i=0; i<list.size();i++){
+            list.get(i).setStartPrice(startPriceList[i]);
+            list.get(i).setEndPrice(endPriceList[i]);
+        }
         listList.add(list);
 
         return listList;

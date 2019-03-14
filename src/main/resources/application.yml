@@ -5,7 +5,8 @@ server:
 mybatis:
   typeAliasesPackage: com.seu.scrm.Entity
   mapperLocations: classpath:mapper/*.xml
-
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 spring:
   datasource:

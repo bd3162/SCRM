@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.seu.scrm.Mapper.PersonStatsMapper">
-  <resultMap id="BaseResultMap" type="com.seu.scrm.Entity.orders">
-    <id column="user_id" jdbcType="VARCHAR" property="userId" />
-    <id column="prod_asin" jdbcType="VARCHAR" property="prodAsin" />
-    <result column="rate" jdbcType="INTEGER" property="rate" />
-    <result column="unix_time" jdbcType="INTEGER" property="unixTime" />
-    <result column="num" jdbcType="INTEGER" property="num" />
-  </resultMap>
+    <resultMap id="CategoryResultMap" type="com.seu.scrm.dto.CategorySales">
+        <id column="category" jdbcType="VARCHAR" property="category" />
+        <result column="sales_count" jdbcType="INTEGER" property="salesCount" />
+        <result column="sales_amount" jdbcType="INTEGER" property="salesAmount" />
+    </resultMap>
+    <resultMap id="BrandResultMap" type="com.seu.scrm.dto.BrandSales">
+        <id column="brand" jdbcType="VARCHAR" property="brand" />
+        <result column="sales_count" jdbcType="INTEGER" property="salesCount" />
+        <result column="sales_amount" jdbcType="INTEGER" property="salesAmount" />
+    </resultMap>
+    <resultMap id="ProductResultMap" type="com.seu.scrm.dto.ProductSales">
+        <id column="product" jdbcType="VARCHAR" property="product" />
+        <result column="sales_count" jdbcType="INTEGER" property="salesCount" />
+        <result column="sales_amount" jdbcType="INTEGER" property="salesAmount" />
+    </resultMap>
+    <resultMap id="PriceSalesResultMap" type="com.seu.scrm.dto.PriceSales">
+        <result column="sales_count" jdbcType="INTEGER" property="salesCount" />
+        <result column="sales_amount" jdbcType="INTEGER" property="salesAmount" />
+    </resultMap>
+    <resultMap id="TimeResultMap" type="com.seu.scrm.dto.Sales">
+        <result column="sales_count" jdbcType="INTEGER" property="salesCount" />
+        <result column="sales_amount" jdbcType="INTEGER" property="salesAmount" />
+    </resultMap>
   <sql id="Base_Column_List">
     user_id, prod_asin, rate, unix_time, num
   </sql>
-  <select id="selectCategorySalesById" resultMap="BaseResultMap">
+  <select id="selectCategorySalesById" resultMap="CategoryResultMap">
     SELECT
     p.cate AS category,
     sum(od.num) AS sales_count,
@@ -29,7 +45,7 @@
     LIMIT #{num,jdbcType=INTEGER};
   </select>
 
-  <select id="selectBrandSalesById" resultMap="BaseResultMap">
+  <select id="selectBrandSalesById" resultMap="BrandResultMap">
     SELECT
         p.brand AS brand,
         sum(od.num) AS sales_count,
@@ -47,7 +63,7 @@
     LIMIT #{num,jdbcType=INTEGER};
   </select>
 
-  <select id="selectProductSalesById" resultMap="BaseResultMap">
+  <select id="selectProductSalesById" resultMap="ProductResultMap">
     SELECT
         p.asin,
         p.title AS product,
@@ -66,7 +82,7 @@
     LIMIT ${num};
   </select>
 
-  <select id="selectTimeSalesById" resultMap="BaseResultMap">
+  <select id="selectTimeSalesById" resultMap="TimeResultMap">
     SELECT
         DAYOFWEEK(FROM_UNIXTIME(od.unix_time)) AS weekday,
         sum(od.num) AS sales_count,
@@ -83,7 +99,7 @@
         DAYOFWEEK(FROM_UNIXTIME(od.unix_time)) ASC;
   </select>
 
-  <select id="selectPriceSalesById" resultMap="BaseResultMap">
+  <select id="selectPriceSalesById" resultMap="PriceSalesResultMap">
     SELECT
         INTERVAL(od.unit_price, 0, 0.01,50,200,500) as i_p,
         sum(od.num) AS sales_count,

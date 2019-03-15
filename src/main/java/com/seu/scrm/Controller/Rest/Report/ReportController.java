@@ -3,18 +3,16 @@ package com.seu.scrm.Controller.Rest.Report;
 import com.seu.scrm.dto.HotRequest;
 import com.seu.scrm.dto.PersonRequest;
 import com.seu.scrm.dto.QuarterlyRequest;
-import com.seu.scrm.service.ReportService;
+import com.seu.scrm.Service.ReportService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 /**
  * Created by chenxiaosuo on 2019/3/6.
  */
-
+@CrossOrigin
 @RestController
 public class ReportController {
     @Autowired

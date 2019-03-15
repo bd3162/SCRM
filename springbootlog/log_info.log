@@ -1,309 +1,36 @@
-2019-03-09 14:07:29.498 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 6012 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 14:07:29.502 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 14:07:31.271 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 14:07:31.285 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 14:07:31.298 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 14:07:31.298 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 14:07:31.305 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 14:07:31.392 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 14:07:31.395 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1777 ms
-2019-03-09 14:07:31.969 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 14:07:32.191 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 14:07:32.220 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 14:07:32.226 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.471 seconds (JVM running for 4.205)
-2019-03-09 14:07:52.971 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 14:07:52.975 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 14:07:52.981 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
-2019-03-09 14:07:53.067 [http-nio-8080-exec-1] INFO  c.seu.scrm.Controller.Rest.Report.ReportController - CALL method queryHotStatistics
-2019-03-09 14:11:43.727 [http-nio-8080-exec-3] INFO  c.seu.scrm.Controller.Rest.Report.ReportController - CALL method queryHotStatistics
-2019-03-09 14:18:06.814 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 3016 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 14:18:06.817 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 14:18:08.638 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 14:18:08.660 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 14:18:08.674 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 14:18:08.674 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 14:18:08.683 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 14:18:08.776 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 14:18:08.778 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1630 ms
-2019-03-09 14:18:09.455 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 14:18:09.647 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 14:18:09.679 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 14:18:09.685 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.918 seconds (JVM running for 4.696)
-2019-03-09 15:43:02.778 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 15116 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 15:43:02.781 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 15:43:04.456 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 15:43:04.478 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 15:43:04.489 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 15:43:04.489 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 15:43:04.497 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 15:43:04.623 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 15:43:04.626 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1772 ms
-2019-03-09 15:43:05.317 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 15:43:05.539 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 15:43:05.572 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 15:43:05.578 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.577 seconds (JVM running for 4.486)
-2019-03-09 15:43:11.774 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 15:43:11.776 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 15:43:11.784 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
-2019-03-09 15:43:11.888 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-03-09 15:43:12.277 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-03-09 15:59:25.965 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 8116 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 15:59:25.970 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 15:59:27.352 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 15:59:27.371 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 15:59:27.381 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 15:59:27.381 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 15:59:27.387 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 15:59:27.470 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 15:59:27.472 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1330 ms
-2019-03-09 15:59:28.067 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 15:59:28.261 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 15:59:28.287 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 15:59:28.294 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.086 seconds (JVM running for 3.922)
-2019-03-09 15:59:33.888 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 15:59:33.891 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 15:59:33.900 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
-2019-03-09 16:02:41.241 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 9084 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 16:02:41.247 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 16:02:42.735 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 16:02:42.754 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 16:02:42.768 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 16:02:42.768 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 16:02:42.790 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 16:02:42.875 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 16:02:42.877 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1461 ms
-2019-03-09 16:02:43.475 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 16:02:43.746 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 16:02:43.770 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 16:02:43.776 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.256 seconds (JVM running for 4.055)
-2019-03-09 16:02:59.791 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 16:02:59.791 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 16:02:59.803 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
-2019-03-09 16:02:59.941 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-03-09 16:03:00.332 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-03-09 16:17:34.793 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 13572 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 16:17:34.798 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 16:17:36.233 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 16:17:36.248 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 16:17:36.257 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 16:17:36.257 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 16:17:36.263 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 16:17:36.335 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 16:17:36.337 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1391 ms
-2019-03-09 16:17:36.951 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 16:17:37.140 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 16:17:37.169 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 16:17:37.174 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.138 seconds (JVM running for 4.075)
-2019-03-09 16:17:42.490 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 16:17:42.493 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 16:17:42.503 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
-2019-03-09 16:17:42.643 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-03-09 16:17:42.981 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-03-09 16:19:49.654 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 14680 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 16:19:49.667 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 16:19:51.060 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 16:19:51.074 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 16:19:51.086 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 16:19:51.086 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 16:19:51.092 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 16:19:51.195 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 16:19:51.199 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1351 ms
-2019-03-09 16:19:51.775 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 16:19:51.953 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 16:19:51.974 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 16:19:51.976 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.11 seconds (JVM running for 3.926)
-2019-03-09 16:19:58.708 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 16:19:58.712 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 16:19:58.721 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
-2019-03-09 16:19:58.826 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-03-09 16:19:59.184 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-03-09 16:22:13.213 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 14452 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 16:22:13.217 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 16:22:14.520 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 16:22:14.536 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 16:22:14.547 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 16:22:14.547 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 16:22:14.552 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 16:22:14.637 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 16:22:14.639 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1339 ms
-2019-03-09 16:22:15.198 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 16:22:15.386 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 16:22:15.408 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 16:22:15.411 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.016 seconds (JVM running for 4.028)
-2019-03-09 16:22:19.263 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 16:22:19.267 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 16:22:19.274 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
-2019-03-09 16:22:19.376 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-03-09 16:22:19.720 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-03-09 16:44:24.235 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 8452 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 16:44:24.238 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 16:44:25.858 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 16:44:25.876 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 16:44:25.886 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 16:44:25.886 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 16:44:25.892 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 16:44:25.979 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 16:44:25.981 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1628 ms
-2019-03-09 16:44:26.568 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 16:44:26.764 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 16:44:26.791 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 16:44:26.797 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.397 seconds (JVM running for 4.505)
-2019-03-09 16:46:48.738 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 16:46:48.741 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 16:46:48.748 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
-2019-03-09 16:46:48.861 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-03-09 16:46:49.250 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-03-09 17:26:30.953 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 13816 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 17:26:30.957 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 17:26:32.623 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 17:26:32.642 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 17:26:32.653 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 17:26:32.653 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 17:26:32.659 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 17:26:32.751 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 17:26:32.753 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1664 ms
-2019-03-09 17:26:33.598 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 17:26:34.141 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 17:26:34.169 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 17:26:34.175 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 4.102 seconds (JVM running for 4.968)
-2019-03-09 17:26:51.957 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 17:26:51.964 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 17:26:51.973 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
-2019-03-09 17:28:42.374 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-03-09 17:28:42.772 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-03-09 17:30:15.606 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 17172 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 17:30:15.610 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 17:30:17.070 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 17:30:17.089 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 17:30:17.101 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 17:30:17.101 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 17:30:17.111 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 17:30:17.199 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 17:30:17.201 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1425 ms
-2019-03-09 17:30:17.856 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 17:30:18.050 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 17:30:18.084 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 17:30:18.091 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.317 seconds (JVM running for 4.141)
-2019-03-09 17:30:30.764 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 17:30:30.768 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 17:30:30.782 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
-2019-03-09 17:30:30.920 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-03-09 17:30:31.349 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-03-09 19:51:21.449 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 11536 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 19:51:21.453 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 19:51:23.582 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 19:51:23.599 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 19:51:23.608 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 19:51:23.609 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 19:51:23.615 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 19:51:23.705 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 19:51:23.708 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1927 ms
-2019-03-09 19:51:24.328 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 19:51:24.534 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 19:51:24.563 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 19:51:24.568 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 4.006 seconds (JVM running for 4.832)
-2019-03-09 19:52:20.916 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 19:52:20.916 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 19:52:20.933 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 13 ms
-2019-03-09 19:52:21.039 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-03-09 19:52:21.425 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-03-09 19:54:57.036 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 8116 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 19:54:57.041 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 19:54:58.712 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 19:54:58.727 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 19:54:58.736 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 19:54:58.737 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 19:54:58.743 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 19:54:58.818 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 19:54:58.821 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1573 ms
-2019-03-09 19:54:59.398 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 19:54:59.699 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 19:54:59.723 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 19:54:59.728 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.49 seconds (JVM running for 4.348)
-2019-03-09 19:55:02.348 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 19:55:02.351 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 19:55:02.357 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
-2019-03-09 19:55:02.467 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-03-09 19:55:02.827 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-03-09 19:57:44.138 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 7296 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 19:57:44.142 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 19:57:46.270 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 19:57:46.286 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 19:57:46.296 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 19:57:46.296 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 19:57:46.302 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 19:57:46.460 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 19:57:46.463 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2062 ms
-2019-03-09 19:57:47.168 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 19:57:47.477 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 19:57:47.524 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 19:57:47.536 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 4.316 seconds (JVM running for 5.235)
-2019-03-09 19:57:52.055 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 19:57:52.055 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 19:57:52.074 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
-2019-03-09 20:00:09.196 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 16832 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 20:00:09.201 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 20:00:10.858 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 20:00:10.875 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 20:00:10.887 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 20:00:10.888 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 20:00:10.894 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 20:00:10.981 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 20:00:10.983 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1651 ms
-2019-03-09 20:00:11.584 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 20:00:11.797 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 20:00:11.821 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 20:00:11.828 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.392 seconds (JVM running for 4.175)
-2019-03-09 20:00:16.341 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 20:00:16.345 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 20:00:16.360 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
-2019-03-09 20:06:07.921 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 10016 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 20:06:07.925 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 20:06:09.308 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 20:06:09.327 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 20:06:09.339 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 20:06:09.340 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 20:06:09.349 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 20:06:09.448 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 20:06:09.451 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1366 ms
-2019-03-09 20:06:10.024 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 20:06:10.207 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 20:06:10.228 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 20:06:10.236 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.004 seconds (JVM running for 3.795)
-2019-03-09 20:06:14.544 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 20:06:14.547 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 20:06:14.559 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
-2019-03-09 20:09:03.227 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 16468 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 20:09:03.232 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 20:09:04.825 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 20:09:04.842 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 20:09:04.852 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 20:09:04.852 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 20:09:04.872 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 20:09:04.960 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 20:09:04.963 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1559 ms
-2019-03-09 20:09:05.610 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 20:09:05.785 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 20:09:05.808 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 20:09:05.814 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.268 seconds (JVM running for 4.21)
-2019-03-09 20:09:13.513 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 20:09:13.516 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 20:09:13.533 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 15 ms
-2019-03-09 20:14:03.327 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on chenxiaosuo with PID 11456 (C:\Users\hua\Documents\workspace\SCRM\target\classes started by hua in C:\Users\hua\Documents\workspace\SCRM)
-2019-03-09 20:14:03.332 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-09 20:14:04.810 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-09 20:14:04.830 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-09 20:14:04.842 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-09 20:14:04.843 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-09 20:14:04.854 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\OpenVPN\bin;;C:\Program Files (x86)\Microsoft VS Code\bin;.]
-2019-03-09 20:14:04.941 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-09 20:14:04.944 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1533 ms
-2019-03-09 20:14:05.580 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-09 20:14:05.783 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-09 20:14:05.810 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-09 20:14:05.815 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.204 seconds (JVM running for 4.032)
-2019-03-09 20:14:10.126 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-09 20:14:10.131 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-09 20:14:10.147 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 13 ms
-2019-03-09 20:14:10.258 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-03-09 20:14:10.603 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-15 18:04:48.447 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on DESKTOP-AE25QV4 with PID 22080 (C:\Users\edu333\Desktop\phx\SCRM\target\classes started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
+2019-03-15 18:04:48.469 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
+2019-03-15 18:04:49.914 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-03-15 18:04:49.930 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-15 18:04:49.937 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-15 18:04:49.938 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-15 18:04:49.944 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\anaconda\envs\scrm;C:\anaconda\envs\scrm\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jre1.8.0_111\bin;C:\Program Files\MySQL\MySQL Server 5.5\bin;D:\redis\;C:\anaconda;C:\anaconda\Scripts;C:\anaconda\Library\bin;D:\github\gitInstall\Git\cmd;C:\Program Files\nodejs\;C:\Users\edu333\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MongoDB\Server\3.4\bin;E:\作业\数据挖掘\爬虫资料\chromedriver_win32 (1);C:\python27;C:\Users\edu333\AppData\Roaming\npm;C:\Users\edu333\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\edu333\AppData\Local\GitHubDesktop\bin;.]
+2019-03-15 18:04:50.052 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-15 18:04:50.052 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1499 ms
+2019-03-15 18:04:51.025 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-15 18:04:51.201 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-15 18:04:51.223 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-15 18:04:51.225 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.486 seconds (JVM running for 5.189)
+2019-03-15 18:04:58.222 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-15 18:04:58.223 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-03-15 18:04:58.230 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2019-03-15 18:04:58.272 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-15 18:04:59.439 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-15 18:11:05.069 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on DESKTOP-AE25QV4 with PID 2564 (C:\Users\edu333\Desktop\phx\SCRM\target\classes started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
+2019-03-15 18:11:05.072 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
+2019-03-15 18:11:06.291 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-03-15 18:11:06.314 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-15 18:11:06.321 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-15 18:11:06.322 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-15 18:11:06.329 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\anaconda\envs\scrm;C:\anaconda\envs\scrm\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jre1.8.0_111\bin;C:\Program Files\MySQL\MySQL Server 5.5\bin;D:\redis\;C:\anaconda;C:\anaconda\Scripts;C:\anaconda\Library\bin;D:\github\gitInstall\Git\cmd;C:\Program Files\nodejs\;C:\Users\edu333\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MongoDB\Server\3.4\bin;E:\作业\数据挖掘\爬虫资料\chromedriver_win32 (1);C:\python27;C:\Users\edu333\AppData\Roaming\npm;C:\Users\edu333\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\edu333\AppData\Local\GitHubDesktop\bin;.]
+2019-03-15 18:11:06.560 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-15 18:11:06.560 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1390 ms
+2019-03-15 18:11:07.161 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-15 18:11:07.340 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-15 18:11:07.362 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-15 18:11:07.365 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 2.875 seconds (JVM running for 4.214)
+2019-03-15 18:11:10.065 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-15 18:11:10.066 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-03-15 18:11:10.071 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2019-03-15 18:11:10.111 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-15 18:11:11.313 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.

@@ -1,16 +1,14 @@
-package com.seu.scrm.service.impl;
+package com.seu.scrm.Service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.seu.scrm.dto.*;
-import com.seu.scrm.service.HotReportService;
-import com.seu.scrm.service.PersonReportService;
-import com.seu.scrm.service.QuarterlyReportService;
-import com.seu.scrm.service.ReportService;
+import com.seu.scrm.Service.HotReportService;
+import com.seu.scrm.Service.PersonReportService;
+import com.seu.scrm.Service.QuarterlyReportService;
+import com.seu.scrm.Service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

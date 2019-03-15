@@ -30,7 +30,7 @@ public class Personal_recomController {
     }
     //按id查找
     @RequestMapping(value="/selectById" ,method = RequestMethod.GET)
-    public  Map<String,Object> selectById(int user_id){
+    public  Map<String,Object> selectById(String user_id){
         Map<String,Object> map=new HashMap<>();
         Personal_recom personal_recom=personal_recomService.selectById(user_id);
         if(personal_recom!=null){
@@ -59,7 +59,7 @@ public class Personal_recomController {
     }
     //去修改信息
     @RequestMapping(value="/toModify" ,method = RequestMethod.GET)
-    public Map<String,Object> tomodify(int user_id) {
+    public Map<String,Object> tomodify(String user_id) {
         Personal_recom personal_recomTemp=personal_recomService.selectById(user_id);
         Map<String,Object> map=new HashMap<>();
         map.put("personal_recomTemp",personal_recomTemp);
@@ -74,7 +74,7 @@ public class Personal_recomController {
     }
     //删除信息
     @RequestMapping(value="/delete" ,method = RequestMethod.GET)
-    public  Map<String,Object> delete(int user_id) {
+    public  Map<String,Object> delete(String user_id) {
         Map<String,Object> map=new HashMap<>();
         Personal_recom personal_recom=personal_recomService.selectById(user_id);
         if(personal_recom!=null){

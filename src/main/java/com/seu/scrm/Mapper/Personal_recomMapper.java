@@ -16,9 +16,9 @@ public interface Personal_recomMapper {
     @Update("update personal_recom set prod_asin=#{personal_recom.prod_asin},rank=#{personal_recom.rank},update_time=#{personal_recom.update_time} where user_id=#{personal_recom.user_id}")
     void update(@Param("personal_recom") Personal_recom personal_recom);
     @Delete("delete from personal_recom where user_id=#{user_id}")
-    void delete(@Param("user_id") int user_id);
+    void delete(@Param("user_id") String user_id);
     @Select("select * from personal_recom where user_id=#{user_id}")
-    Personal_recom selectById(@Param("user_id") int user_id);
+    Personal_recom selectById(@Param("user_id") String user_id);
     @Select("select * from personal_recom")
     List<Personal_recom> select();
     //个性化查询 根据user_id 和最大update_time

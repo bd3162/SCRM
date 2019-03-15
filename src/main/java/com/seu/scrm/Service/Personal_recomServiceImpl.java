@@ -12,7 +12,7 @@ public class Personal_recomServiceImpl  implements  Personal_recomService{
     @Autowired
     private Personal_recomMapper personal_recomMapper;
     @Override
-    public Personal_recom selectById(int user_id) {
+    public Personal_recom selectById(String user_id) {
         return personal_recomMapper.selectById(user_id);
     }
 
@@ -22,7 +22,7 @@ public class Personal_recomServiceImpl  implements  Personal_recomService{
     }
 
     @Override
-    public void delete(int user_id) {
+    public void delete(String user_id) {
         personal_recomMapper.delete(user_id);
     }
 

@@ -1,10 +1,9 @@
-package com.seu.scrm.service.impl;
+package com.seu.scrm.Service.impl;
 
 import com.seu.scrm.Mapper.PersonStatsMapper;
 import com.seu.scrm.dto.*;
-import com.seu.scrm.service.PersonReportService;
+import com.seu.scrm.Service.PersonReportService;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

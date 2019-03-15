@@ -1,4 +1,4 @@
-package com.seu.scrm.service;
+package com.seu.scrm.Service;
 
 import com.seu.scrm.Entity.HotCategoryStats;
 import com.seu.scrm.Mapper.HotBrandStatsMapper;

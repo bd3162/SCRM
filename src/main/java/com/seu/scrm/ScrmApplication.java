@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-@MapperScan("com.seu.scrm.Mapper")
+
 @SpringBootApplication
 @MapperScan("com.seu.scrm.Mapper")
 public class ScrmApplication extends SpringBootServletInitializer {

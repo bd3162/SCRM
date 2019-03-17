@@ -7,7 +7,24 @@ public class Product {
     private String imUrl;
     private String brand;
     private String cate;
+    private int num;
+    private double totalPrice;
 
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
 
     public String getAsin() {
         return asin;

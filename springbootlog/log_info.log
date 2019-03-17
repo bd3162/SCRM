@@ -1,36 +1,119 @@
-2019-03-15 18:04:48.447 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on DESKTOP-AE25QV4 with PID 22080 (C:\Users\edu333\Desktop\phx\SCRM\target\classes started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
-2019-03-15 18:04:48.469 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-15 18:04:49.914 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-15 18:04:49.930 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-15 18:04:49.937 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-15 18:04:49.938 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-15 18:04:49.944 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\anaconda\envs\scrm;C:\anaconda\envs\scrm\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jre1.8.0_111\bin;C:\Program Files\MySQL\MySQL Server 5.5\bin;D:\redis\;C:\anaconda;C:\anaconda\Scripts;C:\anaconda\Library\bin;D:\github\gitInstall\Git\cmd;C:\Program Files\nodejs\;C:\Users\edu333\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MongoDB\Server\3.4\bin;E:\作业\数据挖掘\爬虫资料\chromedriver_win32 (1);C:\python27;C:\Users\edu333\AppData\Roaming\npm;C:\Users\edu333\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\edu333\AppData\Local\GitHubDesktop\bin;.]
-2019-03-15 18:04:50.052 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-15 18:04:50.052 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1499 ms
-2019-03-15 18:04:51.025 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-15 18:04:51.201 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-15 18:04:51.223 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-15 18:04:51.225 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.486 seconds (JVM running for 5.189)
-2019-03-15 18:04:58.222 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-15 18:04:58.223 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-15 18:04:58.230 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
-2019-03-15 18:04:58.272 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-03-15 18:04:59.439 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-03-15 18:11:05.069 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on DESKTOP-AE25QV4 with PID 2564 (C:\Users\edu333\Desktop\phx\SCRM\target\classes started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
-2019-03-15 18:11:05.072 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
-2019-03-15 18:11:06.291 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-03-15 18:11:06.314 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-03-15 18:11:06.321 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-03-15 18:11:06.322 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-15 18:11:06.329 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\anaconda\envs\scrm;C:\anaconda\envs\scrm\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jre1.8.0_111\bin;C:\Program Files\MySQL\MySQL Server 5.5\bin;D:\redis\;C:\anaconda;C:\anaconda\Scripts;C:\anaconda\Library\bin;D:\github\gitInstall\Git\cmd;C:\Program Files\nodejs\;C:\Users\edu333\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MongoDB\Server\3.4\bin;E:\作业\数据挖掘\爬虫资料\chromedriver_win32 (1);C:\python27;C:\Users\edu333\AppData\Roaming\npm;C:\Users\edu333\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\edu333\AppData\Local\GitHubDesktop\bin;.]
-2019-03-15 18:11:06.560 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-03-15 18:11:06.560 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1390 ms
-2019-03-15 18:11:07.161 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-15 18:11:07.340 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-03-15 18:11:07.362 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-15 18:11:07.365 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 2.875 seconds (JVM running for 4.214)
-2019-03-15 18:11:10.065 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-15 18:11:10.066 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-03-15 18:11:10.071 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
-2019-03-15 18:11:10.111 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-03-15 18:11:11.313 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-17 15:48:14.159 [main] INFO  com.seu.scrm.OrdersTest - Starting OrdersTest on DESKTOP-AE25QV4 with PID 12544 (started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
+2019-03-17 15:48:14.171 [main] INFO  com.seu.scrm.OrdersTest - No active profile set, falling back to default profiles: default
+2019-03-17 15:48:19.744 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-17 15:48:20.328 [main] INFO  com.seu.scrm.OrdersTest - Started OrdersTest in 7.663 seconds (JVM running for 11.183)
+2019-03-17 15:48:20.847 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-17 15:48:23.335 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-17 15:48:30.034 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-17 15:48:30.036 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-03-17 15:48:30.063 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-03-17 16:21:53.742 [main] INFO  com.seu.scrm.OrdersTest - Starting OrdersTest on DESKTOP-AE25QV4 with PID 14056 (started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
+2019-03-17 16:21:53.743 [main] INFO  com.seu.scrm.OrdersTest - No active profile set, falling back to default profiles: default
+2019-03-17 16:21:57.368 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-17 16:21:57.888 [main] INFO  com.seu.scrm.OrdersTest - Started OrdersTest in 5.134 seconds (JVM running for 6.241)
+2019-03-17 16:21:58.178 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-17 16:21:59.757 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-17 16:22:09.963 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-17 16:22:09.968 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-03-17 16:22:10.008 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-03-17 16:30:19.782 [main] INFO  com.seu.scrm.OrdersTest - Starting OrdersTest on DESKTOP-AE25QV4 with PID 7672 (started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
+2019-03-17 16:30:19.783 [main] INFO  com.seu.scrm.OrdersTest - No active profile set, falling back to default profiles: default
+2019-03-17 16:30:23.619 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-17 16:30:24.241 [main] INFO  com.seu.scrm.OrdersTest - Started OrdersTest in 5.234 seconds (JVM running for 6.261)
+2019-03-17 16:30:24.517 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-17 16:30:26.132 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-17 16:30:30.556 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-17 16:30:30.561 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-03-17 16:30:30.709 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-03-17 17:08:24.124 [main] INFO  com.seu.scrm.OrdersTest - Starting OrdersTest on DESKTOP-AE25QV4 with PID 14704 (started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
+2019-03-17 17:08:24.126 [main] INFO  com.seu.scrm.OrdersTest - No active profile set, falling back to default profiles: default
+2019-03-17 17:08:28.058 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-17 17:08:28.603 [main] INFO  com.seu.scrm.OrdersTest - Started OrdersTest in 5.242 seconds (JVM running for 6.265)
+2019-03-17 17:08:28.878 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-17 17:08:30.504 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-17 17:08:34.836 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-17 17:08:34.862 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-03-17 17:08:34.875 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-03-17 17:09:04.590 [main] INFO  com.seu.scrm.OrdersTest - Starting OrdersTest on DESKTOP-AE25QV4 with PID 1204 (started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
+2019-03-17 17:09:04.591 [main] INFO  com.seu.scrm.OrdersTest - No active profile set, falling back to default profiles: default
+2019-03-17 17:09:08.811 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-17 17:09:09.424 [main] INFO  com.seu.scrm.OrdersTest - Started OrdersTest in 5.469 seconds (JVM running for 6.477)
+2019-03-17 17:09:09.685 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-17 17:09:11.444 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-17 17:09:15.590 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-17 17:09:15.594 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-03-17 17:09:15.674 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-03-17 17:12:59.062 [main] INFO  com.seu.scrm.OrdersTest - Starting OrdersTest on DESKTOP-AE25QV4 with PID 14272 (started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
+2019-03-17 17:12:59.063 [main] INFO  com.seu.scrm.OrdersTest - No active profile set, falling back to default profiles: default
+2019-03-17 17:13:02.419 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-17 17:13:02.988 [main] INFO  com.seu.scrm.OrdersTest - Started OrdersTest in 4.891 seconds (JVM running for 5.932)
+2019-03-17 17:13:03.244 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-17 17:13:04.848 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-17 17:13:09.221 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-17 17:13:09.225 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-03-17 17:13:09.237 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-03-17 18:58:17.751 [main] INFO  com.seu.scrm.OrdersTest - Starting OrdersTest on DESKTOP-AE25QV4 with PID 10828 (started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
+2019-03-17 18:58:17.771 [main] INFO  com.seu.scrm.OrdersTest - No active profile set, falling back to default profiles: default
+2019-03-17 18:58:22.760 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-17 18:58:23.395 [main] INFO  com.seu.scrm.OrdersTest - Started OrdersTest in 7.143 seconds (JVM running for 9.556)
+2019-03-17 18:58:23.870 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-17 18:58:27.041 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-17 18:58:35.728 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-17 18:58:35.732 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-03-17 18:58:35.757 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-03-17 18:59:42.169 [main] INFO  com.seu.scrm.OrdersTest - Starting OrdersTest on DESKTOP-AE25QV4 with PID 1596 (started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
+2019-03-17 18:59:42.172 [main] INFO  com.seu.scrm.OrdersTest - No active profile set, falling back to default profiles: default
+2019-03-17 18:59:45.648 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-17 18:59:46.176 [main] INFO  com.seu.scrm.OrdersTest - Started OrdersTest in 5.073 seconds (JVM running for 6.453)
+2019-03-17 18:59:46.440 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-17 18:59:48.125 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-17 18:59:52.259 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-17 18:59:52.266 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-03-17 18:59:52.304 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-03-17 19:05:01.359 [main] INFO  com.seu.scrm.OrdersTest - Starting OrdersTest on DESKTOP-AE25QV4 with PID 14488 (started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
+2019-03-17 19:05:01.361 [main] INFO  com.seu.scrm.OrdersTest - No active profile set, falling back to default profiles: default
+2019-03-17 19:05:05.075 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-17 19:05:05.696 [main] INFO  com.seu.scrm.OrdersTest - Started OrdersTest in 5.315 seconds (JVM running for 6.42)
+2019-03-17 19:05:06.094 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-17 19:05:07.897 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-17 19:05:12.025 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-17 19:05:12.028 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-03-17 19:05:12.069 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-03-17 19:05:21.464 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on DESKTOP-AE25QV4 with PID 12596 (C:\Users\edu333\Desktop\phx\SCRM\target\classes started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
+2019-03-17 19:05:21.469 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
+2019-03-17 19:05:23.092 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-03-17 19:05:23.128 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-17 19:05:23.138 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-17 19:05:23.138 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-17 19:05:23.169 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\anaconda\envs\scrm;C:\anaconda\envs\scrm\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jre1.8.0_111\bin;C:\Program Files\MySQL\MySQL Server 5.5\bin;D:\redis\;C:\anaconda;C:\anaconda\Scripts;C:\anaconda\Library\bin;D:\github\gitInstall\Git\cmd;C:\Program Files\nodejs\;C:\Users\edu333\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MongoDB\Server\3.4\bin;E:\作业\数据挖掘\爬虫资料\chromedriver_win32 (1);C:\python27;C:\Users\edu333\AppData\Roaming\npm;C:\Users\edu333\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\edu333\AppData\Local\GitHubDesktop\bin;.]
+2019-03-17 19:05:23.374 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-17 19:05:23.375 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1821 ms
+2019-03-17 19:05:24.107 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-17 19:05:24.414 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-17 19:05:24.448 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2019-03-17 19:05:24.448 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2019-03-17 19:05:24.455 [main] INFO  org.apache.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2019-03-17 19:05:24.455 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2019-03-17 19:05:24.455 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2019-03-17 19:05:24.458 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 19:05:24.464 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-17 19:06:46.339 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on DESKTOP-AE25QV4 with PID 15580 (C:\Users\edu333\Desktop\phx\SCRM\target\classes started by edu333 in C:\Users\edu333\Desktop\phx\SCRM)
+2019-03-17 19:06:46.344 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
+2019-03-17 19:06:47.742 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-03-17 19:06:47.756 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-17 19:06:47.764 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-17 19:06:47.764 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-17 19:06:47.770 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\anaconda\envs\scrm;C:\anaconda\envs\scrm\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jre1.8.0_111\bin;C:\Program Files\MySQL\MySQL Server 5.5\bin;D:\redis\;C:\anaconda;C:\anaconda\Scripts;C:\anaconda\Library\bin;D:\github\gitInstall\Git\cmd;C:\Program Files\nodejs\;C:\Users\edu333\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MongoDB\Server\3.4\bin;E:\作业\数据挖掘\爬虫资料\chromedriver_win32 (1);C:\python27;C:\Users\edu333\AppData\Roaming\npm;C:\Users\edu333\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\edu333\AppData\Local\GitHubDesktop\bin;.]
+2019-03-17 19:06:47.882 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-17 19:06:47.882 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1428 ms
+2019-03-17 19:06:48.532 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-17 19:06:48.716 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-17 19:06:48.738 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-17 19:06:48.741 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 3.033 seconds (JVM running for 3.957)
+2019-03-17 19:07:47.827 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-17 19:07:47.830 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-03-17 19:07:47.842 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+2019-03-17 19:07:47.942 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-17 19:07:49.033 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.

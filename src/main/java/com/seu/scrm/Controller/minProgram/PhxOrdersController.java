@@ -11,10 +11,7 @@ import com.seu.scrm.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @CrossOrigin
 @RequestMapping("/orders")
@@ -30,7 +27,7 @@ public class PhxOrdersController {
    @RequestMapping(value="/getOrders" ,method = RequestMethod.GET)
    public Map<String ,Object> selectOrdersByUserOpenId(String openid){
 
-       //根据用户openId，查询userId,
+       /*//根据用户openId，查询userId,
        List<OrderGroupWare> listOrderGroupWare=new ArrayList<>();
        Map<String,Object> customerMap=new HashMap<>();
        customerMap=selectCustomerByOpenId(openid);
@@ -40,10 +37,12 @@ public class PhxOrdersController {
        if(customerMap.get("user_id")!=null){
           user_id=(String)customerMap.get("user_id");
           //根据用户userid查询订单列表
-          listOrders=ordersService.selectByUserId(user_id);
+           listOrders=ordersService.selectByUserId(user_id);
+           //listOrders=ordersService.selectOrdersByopenId(openid);
           //把订单集合中的productId放到一个单独集合
            for(int i=0;i<listOrders.size();i++){
                OrderGroupWare orderGroupWare=new OrderGroupWare();
+
                String prod_asinTemp=listOrders.get(i).getProd_asin();
                int num=listOrders.get(i).getNum();
                int unix_time=listOrders.get(i).getUnix_time();
@@ -62,11 +61,23 @@ public class PhxOrdersController {
                orderGroupWare.setUnix_time(unix_time);
                listOrderGroupWare.add(orderGroupWare);
            }
-
-       }
+           /////////////////////////////////////////////////////////////////////
+       }*/
        //放在一个组合的类中
+       Map<String,Integer>asinMap=selectAsinAndNum(openid);
+       Set<String>asinSet=asinMap.keySet();
+       List<Product>productList=ordersService.selectProductByAsinSet(asinSet);
+       for(Product p: productList){
+           String asinTemp=p.getAsin();
+           double priceTemp=p.getPrice();
+           int numTemp=asinMap.get(asinTemp);
+           p.setTotalPrice(numTemp*priceTemp);
+           p.setNum(numTemp);
+       }
+      //List<Product> productList=ordersService.selectProductByOpenId(openid);
         Map<String,Object> map=new HashMap<>();
-       map.put("listOrderGroupWare",listOrderGroupWare);
+       //map.put("listOrderGroupWare",listOrderGroupWare);
+       map.put("listOrderGroupWare",productList);
        return map;
 
    }
@@ -89,6 +100,20 @@ public class PhxOrdersController {
             map.put("user_id",null);
         }
         return map;
+    }
+
+
+    //新方法：
+    public Map<String,Integer>  selectAsinAndNum(String openid){
+        List<Orders> listOrders=new ArrayList<>();
+        listOrders=ordersService.selectOrdersByopenId(openid);
+        Map<String ,Integer>map =new HashMap<>();
+        for(int i=0;i<listOrders.size();i++){
+            int number=listOrders.get(i).getNum();
+            String asin=listOrders.get(i).getProd_asin();
+            map.put(asin,number);
+        }
+       return map;
     }
 
 }

@@ -24,9 +24,14 @@ public class OrdersTest extends ScrmApplicationTests {
         System.out.println(ordersController.selectCustomerByOpenId("oyPj64t9XG6uf6-vnTvZoIydy2Ys"));
 
     }
+    @Test
+    public  void  testTime(){
+
+        System.out.println(ordersController.selectOrdersByUserOpenId("oyPj64t9XG6uf6-vnTvZoIydy2Ys"));
+    }
     //@Test
     public void testselectOrdersByUserOpenId(){
-       System.out.println(ordersController.selectOrdersByUserOpenId("oyPj64t9XG6uf6-vnTvZoIydy2Ys"));
+       System.out.println(ordersController.selectOrdersByUserOpenId("oyPj64t9XG6uf6-vnTvZoIydy2Ys").toString());
     }
     //@Test
     public void testselectByUserId(){
@@ -44,7 +49,7 @@ public class OrdersTest extends ScrmApplicationTests {
            System.out.println(title);
 
     }
-    @Test
+    //@Test
     public void testListOrderGroupWare(){
         List<OrderGroupWare> listOrderGroupWare=new ArrayList<>();
         OrderGroupWare orderGroupWare=new OrderGroupWare();
@@ -75,7 +80,7 @@ public class OrdersTest extends ScrmApplicationTests {
             System.out.println(title);
         }
     }
-    @Test
+   // @Test
     public void testListOrderGroupWareTwo(){
         List<OrderGroupWare> listOrderGroupWare=new ArrayList<>();
 

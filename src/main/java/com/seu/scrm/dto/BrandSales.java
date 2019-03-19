@@ -7,10 +7,6 @@ package com.seu.scrm.dto;
  */
 public class BrandSales extends Sales{
 
-    public BrandSales(String brand) {
-        this.brand = brand;
-    }
-
     /*
         * 品牌名称
 

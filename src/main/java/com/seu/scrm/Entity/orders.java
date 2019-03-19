@@ -1,11 +1,14 @@
 package com.seu.scrm.Entity;
 
-public class Orders {
+import java.io.Serializable;
+
+public class Orders implements Serializable {
     private String user_id;
     private String prod_asin;
     private int rate;
     private int unix_time;
     private int num;
+    //private static final long serialVersionUID = -3946734305303957850L;
 
     public String getUser_id() {
         return user_id;

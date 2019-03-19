@@ -1,13 +1,33 @@
 package com.seu.scrm.Entity;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable{
     private String asin;
     private String title;
     private double price;
     private String imUrl;
     private String brand;
     private String cate;
+    private int num;
+    private double totalPrice;
+    private static final long serialVersionUID = -394673430530390L;
 
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
 
     public String getAsin() {
         return asin;

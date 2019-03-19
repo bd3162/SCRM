@@ -10,11 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.List;
-
 
 @Service
 public class CashierService {
@@ -30,11 +27,8 @@ public class CashierService {
      */
     public Map<String, Object> findProdByID(@RequestParam("asin") String asin){
         Map<String, Object> map = new HashMap<String, Object>();
-        List<Product> list=new ArrayList<>();
         if(asin != null && asin != "") {
-             list=cashMapper.findProdByID(asin);
-             Product _product=list.get(0);
-            //Product _product = cashMapper.findProdByID(asin);
+            Product _product = cashMapper.findProdByID(asin);
             if( _product != null) {
                 map.put("message",true);
                 map.put("asin", _product.getAsin());

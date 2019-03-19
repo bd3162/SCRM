@@ -2,6 +2,7 @@ package com.seu.scrm.Mapper;
 
 
 import com.seu.scrm.Entity.Product;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;

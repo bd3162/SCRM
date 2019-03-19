@@ -5,6 +5,35 @@ public class Customer {
     private String  verif;
     private String open_id;
     private int memb_points;
+    private String city;
+    private int gender;
+    //性别：1代表男,非1代表女,不考虑其他特殊情况
+    private String avatarUrl;
+
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public int getGender() {
+        return gender;
+    }
+
+    public void setGender(int gender) {
+        this.gender = gender;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
 
     public String getUser_id() {
         return user_id;

@@ -100,23 +100,23 @@ public class CashierController {
     }
 
     /**
-     * @Description: 微信端输入验证码，修改用户的open_id
+     * @Description: 微信端输入验证码，修改用户的open_id等基本信息
      * @Param: 
      * @Return: 
      * @Author: karin
      */
     @RequestMapping(value="/updateOpenId")
     @ResponseBody
-    public Map<String, Object> updateOpenId(@RequestParam("open_id") String open_id, @RequestParam("verif") String verif){
-        System.out.println("open_id"+open_id+"=====verif:"+verif);
+    public Map<String, Object> updateOpenId(@RequestParam("open_id") String open_id,@RequestParam("city") String city,@RequestParam("gender") int gender,@RequestParam("avatarUrl") String avatarUrl, @RequestParam("verif") String verif){
+        System.out.println("open_id"+open_id+"=====verif:"+verif+"=city:"+city+"gender="+gender+"avatarUrl"+avatarUrl);
         Map<String,Object> map =new HashMap<>();
 
         if(verif.equals(theLatestCode)) {
             //字符串比值用equals函数
-            map=cashierService.updateOpen_id(open_id,verif);
-        }else {
+            map=cashierService.updateOpen_id(open_id,city,gender,avatarUrl,verif);
+       }else {
             map.put("message",false);
-        }
+       }
         return map;
     }
 }

@@ -155,15 +155,19 @@ public class CashierService {
 
 
     /**
-     * @Description: 更新用户open_id
+     * @Description: 更新用户open_id,etc
      * @Param:
      * @Return:
      * @Author: karin
      */
-    public Map<String,Object> updateOpen_id(@RequestParam("open_id") String open_id, @RequestParam("verif") String verif){
+    public Map<String,Object> updateOpen_id(@RequestParam("open_id") String open_id,@RequestParam("city") String city,@RequestParam("gender") int gender,@RequestParam("avatarUrl") String avatarUrl, @RequestParam("verif") String verif){
+       //  , @Param("verif") String verif)
         Map<String, Object> map = new HashMap<String, Object>();
-        if(cashMapper.updateOpen_id(open_id,verif)) {
+        if(cashMapper.updateOpen_id(open_id,city,gender,avatarUrl,verif)) {
             map.put("open_id",open_id);
+            map.put("city",city);
+            map.put("gender",gender);
+            map.put("avatarUrl",avatarUrl);
             map.put("verif",verif);
             map.put("message", true);
         } else {

@@ -67,12 +67,12 @@ public interface CashMapper {
     Customer findCustomerByVerif(@Param("verif") String verif);
 
     /**
-     * @Description: 给用户加open_id
+     * @Description: 给用户加open_id等
      * @Param: open_id verif
      * @Return: 
      * @Author: karin
      */
-    @Update("update customer set open_id = #{open_id} where verif = #{verif}")
-    boolean updateOpen_id(@Param("open_id") String open_id, @Param("verif") String verif);
+    @Update("update customer set open_id = #{open_id},city=#{city},gender=${gender},avatarUrl=#{avatarUrl} where verif = #{verif}")
+    boolean updateOpen_id(@Param("open_id") String open_id,@Param("city") String city,@Param("gender") int gender,@Param("avatarUrl") String avatarUrl, @Param("verif") String verif);
 
 }

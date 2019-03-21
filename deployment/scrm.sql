@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80015
 File Encoding         : 65001
 
-Date: 2019-03-14 15:25:45
+Date: 2019-03-21 09:26:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -45,8 +45,24 @@ CREATE TABLE `customer` (
   `user_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'user_id',
   `verif` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '面部识别',
   `open_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '微信id',
-  `memb_points` int(255) DEFAULT NULL COMMENT '会员积分'
+  `memb_points` int(255) DEFAULT NULL COMMENT '会员积分',
+  `city` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `gender` int(255) DEFAULT NULL,
+  `avatarUrl` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Table structure for entrance_events
+-- ----------------------------
+DROP TABLE IF EXISTS `entrance_events`;
+CREATE TABLE `entrance_events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户id',
+  `time` datetime NOT NULL COMMENT '用户进入时间',
+  `is_sent` int(255) unsigned zerofill NOT NULL COMMENT '是否下发（0或者空为未下发，1为下发）',
+  `is_old` int(255) NOT NULL DEFAULT '0' COMMENT '是否是老用户，老用户为1,新用户为0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for hot_brand_stats
@@ -100,8 +116,8 @@ CREATE TABLE `hot_product_stats` (
 -- ----------------------------
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
-  `user_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `prod_asin` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `user_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `prod_asin` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `rate` int(50) DEFAULT NULL,
   `unix_time` int(255) DEFAULT NULL,
   `num` int(50) DEFAULT '1',
@@ -114,10 +130,11 @@ CREATE TABLE `orders` (
 -- ----------------------------
 DROP TABLE IF EXISTS `personal_recom`;
 CREATE TABLE `personal_recom` (
-  `user_id` varchar(255) NOT NULL,
+  `user_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `prod_asin` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `rank` decimal(50,5) DEFAULT NULL COMMENT '推荐分数',
-  `update_time` int(50) DEFAULT NULL
+  `reco_rank` int(10) NOT NULL COMMENT '推荐分数',
+  `update_time` int(50) NOT NULL,
+  PRIMARY KEY (`user_id`,`reco_rank`,`update_time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
@@ -137,12 +154,12 @@ CREATE TABLE `prodcate` (
 -- ----------------------------
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
-  `asin` varchar(255) NOT NULL,
-  `title` varchar(255) DEFAULT NULL,
+  `asin` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
-  `imUrl` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `brand` varchar(50) DEFAULT NULL,
-  `cate` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `imUrl` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `brand` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `cate` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`asin`),
   KEY `asin_idx` (`asin`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -198,13 +215,38 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `cate` A
 -- View structure for orders_totalprice
 -- ----------------------------
 DROP VIEW IF EXISTS `orders_totalprice`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `orders_totalprice` AS select `product`.`asin` AS `asin`,`product`.`title` AS `product`,`orders`.`num` AS `num`,`orders`.`user_id` AS `user_id`,(`orders`.`num` * `product`.`price`) AS `price`,`orders`.`unix_time` AS `unix_time`,`product`.`price` AS `unit_price`,`product`.`cate` AS `category`,`product`.`brand` AS `brand` from (`product` join `orders`) where (`product`.`asin` = `orders`.`prod_asin`) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `orders_totalprice` AS select `product`.`asin` AS `asin`,`product`.`title` AS `product`,`orders`.`num` AS `num`,`orders`.`user_id` AS `user_id`,(`orders`.`num` * `product`.`price`) AS `price`,`orders`.`unix_time` AS `unix_time`,`product`.`price` AS `unit_price`,`product`.`cate` AS `category`,`product`.`brand` AS `brand` from (`product` join `orders`) where (convert(`product`.`asin` using utf8mb4) = convert(`orders`.`prod_asin` using utf8mb4)) ;
 
 -- ----------------------------
 -- View structure for test
 -- ----------------------------
 DROP VIEW IF EXISTS `test`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `test` AS select `prodcate`.`product_asin` AS `product_asin`,count(`prodcate`.`category`) AS `count(category)` from `prodcate` where (not(`prodcate`.`product_asin` in (select `prodcate`.`product_asin` from `prodcate` where (not(`prodcate`.`category` in (select `prodcate`.`category` from `prodcate` where (`prodcate`.`product_asin` = 'B000BN94F8'))))))) group by `prodcate`.`product_asin` having (count(0) > 5) ;
+
+-- ----------------------------
+-- Procedure structure for update_common_recom
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `update_common_recom`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `update_common_recom`()
+BEGIN
+    INSERT INTO 
+    common_recom (prod_asin, update_time) 
+    SELECT
+        od.asin AS prod_asin,
+        UNIX_TIMESTAMP(now()) AS update_time
+    FROM orders_totalprice od
+    WHERE
+        od.unix_time >= UNIX_TIMESTAMP(CURDATE()) - (DATEDIFF(curdate(), '2011-12-31') + 30) * 86400
+    AND od.unix_time < UNIX_TIMESTAMP(CURDATE()) - DATEDIFF(curdate(), '2011-12-31') * 86400
+    GROUP BY
+        od.asin
+		ORDER BY
+				count(od.asin) desc limit 16;
+
+END
+;;
+DELIMITER ;
 
 -- ----------------------------
 -- Procedure structure for update_hot_stats
@@ -346,6 +388,15 @@ GROUP BY YEAR, QUARTER;
 
 
 END
+;;
+DELIMITER ;
+
+-- ----------------------------
+-- Event structure for regular_update_common_recom
+-- ----------------------------
+DROP EVENT IF EXISTS `regular_update_common_recom`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` EVENT `regular_update_common_recom` ON SCHEDULE EVERY 1 DAY STARTS '2019-03-14 19:30:00' ON COMPLETION NOT PRESERVE ENABLE DO call update_common_recom()
 ;;
 DELIMITER ;
 

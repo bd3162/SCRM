@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seu.scrm.Mapper.EntranceEventsMapper">
+  <resultMap id="BaseResultMap" type="com.seu.scrm.Entity.EntranceEvents">
+    <id column="user_id" jdbcType="VARCHAR" property="userId" />
+    <id column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="is_sent" jdbcType="INTEGER" property="isSent" />
+      <result column="is_old" jdbcType="INTEGER" property="isOld" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    user_id, time, is_sent, is_old
+  </sql>
+
+  <select id="queryEntranceEvent" resultMap="BaseResultMap">
+    select
+      <include refid="Base_Column_List" />
+    from entrance_events
+    where TIMESTAMPDIFF(SECOND, time, now()) &lt; ${second}
+    and is_sent = ${isSent}
+      order by time asc
+      limit 1;
+  </select>
+
+  <insert id="insertSelective" parameterType="com.seu.scrm.Entity.EntranceEvents" useGeneratedKeys="true" keyProperty="id">
+    insert into entrance_events
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+        time,
+      <if test="isSent != null">
+        is_sent,
+      </if>
+      <if test="isOld != null">
+        is_old,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+        now(),
+      <if test="isSent != null">
+        #{isSent,jdbcType=INTEGER},
+      </if>
+        <if test="isOld != null">
+            #{isOld,jdbcType=INTEGER},
+        </if>
+    </trim>
+  </insert>
+
+    <update id="updateEntranceEvent" parameterType="com.seu.scrm.Entity.EntranceEvents">
+        update entrance_events
+        set is_sent = #{isSent,jdbcType=INTEGER}
+        where user_id = #{userId,jdbcType=VARCHAR}
+        and time = #{time,jdbcType=TIMESTAMP}
+    </update>
+</mapper>

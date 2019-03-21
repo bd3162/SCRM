@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seu.scrm.Mapper.SalesRecommendMapper">
+  <resultMap id="BaseResultMap" type="com.seu.scrm.dto.ProductInfo">
+    <id column="asin" jdbcType="VARCHAR" property="asin" />
+    <id column="title" jdbcType="VARCHAR" property="title" />
+    <id column="price" jdbcType="VARCHAR" property="price" />
+    <id column="imUrl" jdbcType="VARCHAR" property="imUrl" />
+    <id column="brand" jdbcType="VARCHAR" property="brand" />
+    <id column="category" jdbcType="VARCHAR" property="category" />
+    <id column="ranks" jdbcType="INTEGER" property="rank" />
+  </resultMap>
+
+  <select id="queryPersonalProductList" resultMap="BaseResultMap">
+    SELECT
+    p.asin AS asin,
+    p.title AS title,
+    p.price AS price,
+    p.imUrl AS imUrl,
+    p.brand AS brand,
+    p.cate AS category,
+    pr.reco_rank AS ranks
+    FROM
+    product p,
+    personal_recom pr
+    WHERE
+    pr.user_id = #{userId,jdbcType=VARCHAR}
+    AND pr.update_time = (SELECT Max(update_time) FROM personal_recom WHERE user_id = #{userId,jdbcType=VARCHAR})
+    AND pr.prod_asin = p.asin
+    ORDER BY
+    pr.reco_rank ASC;
+</select>
+
+<select id="queryCommonProductList" resultMap="BaseResultMap">
+    SELECT
+        p.asin AS asin,
+        p.title AS title,
+        p.price AS price,
+        p.imUrl AS imUrl,
+        p.brand AS brand,
+        p.cate AS category
+    FROM
+        product p,
+        common_recom cr
+    WHERE cr.update_time = (
+        SELECT
+            Max(update_time)
+        FROM
+            common_recom
+    )
+    AND cr.prod_asin = p.asin;
+</select>
+</mapper>

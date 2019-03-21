@@ -14,3 +14,12 @@ spring:
     url: jdbc:mysql://42.159.104.30:3306/scrm?serverTimezone=GMT%2B8
     username: root
     password: SCRMbd3162.
+redis:
+  host: 127.0.0.1
+  port: 6379
+  pool:
+      max-active: -1
+      max-wait: 1
+      max-idle: 8
+      min-idle: 0
+  timeout: 1000

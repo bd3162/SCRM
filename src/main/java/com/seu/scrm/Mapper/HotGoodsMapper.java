@@ -11,9 +11,8 @@ import java.util.List;
 @Repository
 public interface HotGoodsMapper {
 
-        @Select("SELECT  cate,brand,asin,title,imUrl,price,num from orders,product where orders.prod_asin=product.asin " +
-                "group by prod_asin order by sum(num) desc limit 3")
-        List<Product> select();
+    @Select("SELECT  * from product,common_recom where common_recom.prod_asin=product.asin ")
+    List<Product> select();
 
     @Select(" select * from customer where open_id =#{open_id}")
         Orders selectById(@Param("open_id") String open_id);

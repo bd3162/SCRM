@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : SCRM
+Source Server         : 42.159.104.30
 Source Server Version : 80015
 Source Host           : 42.159.104.30:3306
 Source Database       : scrm
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80015
 File Encoding         : 65001
 
-Date: 2019-03-21 09:26:31
+Date: 2019-03-24 14:22:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -48,7 +48,9 @@ CREATE TABLE `customer` (
   `memb_points` int(255) DEFAULT NULL COMMENT '会员积分',
   `city` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `gender` int(255) DEFAULT NULL,
-  `avatarUrl` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
+  `avatarUrl` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  PRIMARY KEY (`user_id`),
+  KEY `user_id` (`user_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
@@ -121,8 +123,8 @@ CREATE TABLE `orders` (
   `rate` int(50) DEFAULT NULL,
   `unix_time` int(255) DEFAULT NULL,
   `num` int(50) DEFAULT '1',
-  KEY `user_id` (`user_id`),
-  KEY `prod_asin` (`prod_asin`)
+  KEY `user_id_idx` (`user_id`) USING BTREE,
+  KEY `prod_asin_idx` (`prod_asin`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
@@ -134,6 +136,7 @@ CREATE TABLE `personal_recom` (
   `prod_asin` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `reco_rank` int(10) NOT NULL COMMENT '推荐分数',
   `update_time` int(50) NOT NULL,
+  `source` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`user_id`,`reco_rank`,`update_time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -161,7 +164,7 @@ CREATE TABLE `product` (
   `brand` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `cate` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`asin`),
-  KEY `asin_idx` (`asin`)
+  KEY `asin_idx` (`asin`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
@@ -206,24 +209,6 @@ CREATE TABLE `quarterly_total_stats` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- View structure for cate
--- ----------------------------
-DROP VIEW IF EXISTS `cate`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `cate` AS select `prodcate`.`product_asin` AS `product_asin`,`prodcate`.`category` AS `category` from `prodcate` where (`prodcate`.`product_asin` = 'B000BN94F8') ;
-
--- ----------------------------
--- View structure for orders_totalprice
--- ----------------------------
-DROP VIEW IF EXISTS `orders_totalprice`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `orders_totalprice` AS select `product`.`asin` AS `asin`,`product`.`title` AS `product`,`orders`.`num` AS `num`,`orders`.`user_id` AS `user_id`,(`orders`.`num` * `product`.`price`) AS `price`,`orders`.`unix_time` AS `unix_time`,`product`.`price` AS `unit_price`,`product`.`cate` AS `category`,`product`.`brand` AS `brand` from (`product` join `orders`) where (convert(`product`.`asin` using utf8mb4) = convert(`orders`.`prod_asin` using utf8mb4)) ;
-
--- ----------------------------
--- View structure for test
--- ----------------------------
-DROP VIEW IF EXISTS `test`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `test` AS select `prodcate`.`product_asin` AS `product_asin`,count(`prodcate`.`category`) AS `count(category)` from `prodcate` where (not(`prodcate`.`product_asin` in (select `prodcate`.`product_asin` from `prodcate` where (not(`prodcate`.`category` in (select `prodcate`.`category` from `prodcate` where (`prodcate`.`product_asin` = 'B000BN94F8'))))))) group by `prodcate`.`product_asin` having (count(0) > 5) ;
-
--- ----------------------------
 -- Procedure structure for update_common_recom
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `update_common_recom`;
@@ -233,16 +218,17 @@ BEGIN
     INSERT INTO 
     common_recom (prod_asin, update_time) 
     SELECT
-        od.asin AS prod_asin,
+        od.prod_asin AS prod_asin,
         UNIX_TIMESTAMP(now()) AS update_time
-    FROM orders_totalprice od
+    FROM orders od, product p
     WHERE
         od.unix_time >= UNIX_TIMESTAMP(CURDATE()) - (DATEDIFF(curdate(), '2011-12-31') + 30) * 86400
     AND od.unix_time < UNIX_TIMESTAMP(CURDATE()) - DATEDIFF(curdate(), '2011-12-31') * 86400
+	AND od.prod_asin = p.asin
     GROUP BY
-        od.asin
+        od.prod_asin
 		ORDER BY
-				count(od.asin) desc limit 16;
+				count(od.prod_asin) desc limit 16;
 
 END
 ;;
@@ -280,32 +266,34 @@ loop1:loop
     hot_category_stats (period, category, sales_count, sales_amount, count_time) 
     SELECT
         ePeriod as period,
-        od.category AS category,
+        p.cate AS category,
         sum(od.num) AS sales_count,
-        sum(od.price) AS sales_amount,
+        sum(od.num * p.price) AS sales_amount,
         CURRENT_TIMESTAMP AS count_time
-    FROM orders_totalprice od
+    FROM orders od, product p
     WHERE
         od.unix_time >= UNIX_TIMESTAMP(CURDATE()) - (DATEDIFF(curdate(), '2011-12-31') + ePeriod) * 86400
     AND od.unix_time < UNIX_TIMESTAMP(CURDATE()) - DATEDIFF(curdate(), '2011-12-31') * 86400
+	AND od.prod_asin = p.asin
     GROUP BY
-        od.category;
+        p.cate;
         
     /*统计品牌数据*/
     INSERT INTO 
     hot_brand_stats (period, brand, sales_count, sales_amount, count_time) 
     SELECT
         ePeriod as period,
-        od.brand AS brand,
+        p.brand AS brand,
         sum(od.num) AS sales_count,
-        sum(od.price) AS sales_amount,
+        sum(od.num * p.price) AS sales_amount,
         CURRENT_TIMESTAMP AS count_time
-    FROM orders_totalprice od
+    FROM orders od, product p
     WHERE
         od.unix_time >= UNIX_TIMESTAMP(CURDATE()) - (DATEDIFF(curdate(), '2011-12-31') + ePeriod) * 86400
     AND od.unix_time < UNIX_TIMESTAMP(CURDATE()) - DATEDIFF(curdate(), '2011-12-31') * 86400
+	AND od.prod_asin = p.asin
     GROUP BY
-        od.brand;
+        p.brand;
         
 
     /*统计产品数据*/
@@ -313,16 +301,17 @@ loop1:loop
     hot_product_stats (period, product, sales_count, sales_amount, count_time) 
     SELECT
         ePeriod as period,
-        od.product AS product,
+        p.title AS product,
         sum(od.num) AS sales_count,
-        sum(od.price) AS sales_amount,
+        sum(od.num * p.price) AS sales_amount,
         CURRENT_TIMESTAMP AS count_time
-    FROM orders_totalprice od
+    FROM orders od, product p
     WHERE
         od.unix_time >= UNIX_TIMESTAMP(CURDATE()) - (DATEDIFF(curdate(), '2011-12-31') + ePeriod) * 86400
     AND od.unix_time < UNIX_TIMESTAMP(CURDATE()) - DATEDIFF(curdate(), '2011-12-31') * 86400
+	AND od.prod_asin = p.asin
     GROUP BY
-        od.product;
+        product;
     
     
     set i = i +1;
@@ -349,12 +338,13 @@ INSERT INTO
 quarterly_category_stats (YEAR, QUARTER, category, sales_count,	sales_amount, count_time) 
 SELECT 	YEAR(FROM_UNIXTIME(od.unix_time)) AS YEAR,
 	QUARTER (FROM_UNIXTIME(od.unix_time)) AS QUARTER,
-	od.category AS category,
+	p.cate AS category,
 	sum(od.num) AS sales_count,
-	sum(od.price) AS sales_amount,
+	sum(od.num * p.price) AS sales_amount,
 	CURRENT_TIMESTAMP AS count_time
 FROM
-	orders_totalprice od
+	orders od, product p
+WHERE od.prod_asin = p.asin
 GROUP BY YEAR, QUARTER, category;
 
 
@@ -364,13 +354,14 @@ INSERT INTO
 quarterly_product_stats (YEAR,	QUARTER, product,	sales_count, sales_amount,count_time) 
 SELECT YEAR(FROM_UNIXTIME(od.unix_time)) AS YEAR, 
 	QUARTER (FROM_UNIXTIME(od.unix_time)) AS QUARTER,
-	od.asin AS product,
+	od.prod_asin AS product,
 	sum(od.num) AS sales_count,
-	sum(od.price) AS sales_amount,
+	sum(od.num * p.price) AS sales_amount,
 	CURRENT_TIMESTAMP AS count_time
 FROM
-	orders_totalprice od
-GROUP BY YEAR, QUARTER,	od.asin;
+	orders od, product p
+WHERE od.prod_asin = p.asin
+GROUP BY YEAR, QUARTER,	od.prod_asin;
 
 
 
@@ -380,10 +371,11 @@ quarterly_total_stats (YEAR,	QUARTER, sales_count, sales_amount,count_time)
 SELECT YEAR(FROM_UNIXTIME(od.unix_time)) AS YEAR, 
 	QUARTER (FROM_UNIXTIME(od.unix_time)) AS QUARTER,
 	sum(od.num) AS sales_count,
-	sum(od.price) AS sales_amount,
+	sum(od.num * p.price) AS sales_amount,
 	CURRENT_TIMESTAMP AS count_time
 FROM
-	orders_totalprice od
+	orders od, product p
+WHERE od.prod_asin = p.asin
 GROUP BY YEAR, QUARTER;
 
 

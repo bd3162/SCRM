@@ -29,19 +29,19 @@
   </sql>
   <select id="selectCategorySalesById" resultMap="CategoryResultMap">
     SELECT
-    p.cate AS category,
-    sum(od.num) AS sales_count,
-    sum(od.price) AS sales_amount
+        p.cate AS category,
+        sum(od.num) AS sales_count,
+        sum(p.price * od.num) AS sales_amount
     FROM
-    orders_totalprice od,
-    product p
+        orders od,
+        product p
     WHERE
-    od.user_id = #{userId,jdbcType=VARCHAR}
-    AND p.asin = od.asin
+        od.user_id = #{userId,jdbcType=VARCHAR}
+    AND p.asin = od.prod_asin
     GROUP BY
-    p.cate
+        p.cate
     ORDER BY
-    sum(od.num) DESC
+        sum(od.num) DESC
     LIMIT #{num,jdbcType=INTEGER};
   </select>
 
@@ -49,13 +49,13 @@
     SELECT
         p.brand AS brand,
         sum(od.num) AS sales_count,
-        sum(od.price) AS sales_amount
+        sum(p.price * od.num) AS sales_amount
     FROM
-        orders_totalprice od,
+        orders od,
         product p
     WHERE
         od.user_id = #{userId,jdbcType=VARCHAR}
-    AND p.asin = od.asin
+    AND p.asin = od.prod_asin
     GROUP BY
         p.brand
     ORDER BY
@@ -68,15 +68,15 @@
         p.asin,
         p.title AS product,
         sum(od.num) AS sales_count,
-        sum(od.price) AS sales_amount
+        sum(p.price * od.num) AS sales_amount
     FROM
-        orders_totalprice od,
+        orders od,
         product p
     WHERE
         od.user_id = #{userId}
-    AND p.asin = od.asin
+    AND p.asin = od.prod_asin
     GROUP BY
-        od.asin
+        od.prod_asin
     ORDER BY
         sum(od.num) DESC
     LIMIT ${num};
@@ -86,13 +86,13 @@
     SELECT
         DAYOFWEEK(FROM_UNIXTIME(od.unix_time)) AS weekday,
         sum(od.num) AS sales_count,
-        sum(od.price) AS sales_amount
+        sum(p.price * od.num) AS sales_amount
     FROM
-        orders_totalprice od,
+        orders od,
         product p
     WHERE
         od.user_id = #{userId,jdbcType=VARCHAR}
-    AND p.asin = od.asin
+    AND p.asin = od.prod_asin
     GROUP BY
         DAYOFWEEK(FROM_UNIXTIME(od.unix_time))
     ORDER BY
@@ -101,15 +101,15 @@
 
   <select id="selectPriceSalesById" resultMap="PriceSalesResultMap">
     SELECT
-        INTERVAL(od.unit_price, 0, 0.01,50,200,500) as i_p,
+        INTERVAL(p.price, 0, 0.01,50,200,500) as i_p,
         sum(od.num) AS sales_count,
-        sum(od.price) AS sales_amount
+        sum(p.price * od.num) AS sales_amount
     FROM
-        orders_totalprice od,
+        orders od,
         product p
     WHERE
         od.user_id = #{userId,jdbcType=VARCHAR}
-    AND p.asin = od.asin
+    AND p.asin = od.prod_asin
     GROUP BY
         i_p
     ORDER BY

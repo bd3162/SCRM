@@ -27,7 +27,7 @@ public class ActivityController {
         Map<String,Object> map=new HashMap<>();
         Activity activity=activityService.selectActivityById(id);
         if(activity!=null){
-            map.put("activity",activity);
+  //          map.put("activity",activity);
             map.put("id",activity.getId());
             map.put("activ_title",activity.getActiv_title());
             map.put("activ_img",activity.getActiv_img());
@@ -52,7 +52,7 @@ public class ActivityController {
         Activity activity=activityService.selectActivityById(id);
         Map<String,Object> map=new HashMap<>();
         if(activity!=null){
-            map.put("activity",activity);
+           // map.put("activity",activity);
             map.put("id",activity.getId());
             map.put("activ_title",activity.getActiv_title());
             map.put("activ_img",activity.getActiv_img());

@@ -20,7 +20,7 @@ public class OrdersServiceImpl implements OrdersService {
    private OrdersMapper ordersMapper;
    @Autowired
    public RedisTemplate<Object,Object> redisTemplate;
-   public RedisTemplate<String,String> redisTemplate1;
+   //public RedisTemplate<String,String> redisTemplate1;
     @Override
     //根据用户id查询订单
     public List<Orders> selectByUserId(String user_id) {
@@ -31,7 +31,7 @@ public class OrdersServiceImpl implements OrdersService {
     public List<Product> selectProductByOpenId(String open_id) {
         return ordersMapper.selectProductByOpenId(open_id);
     }
-
+    //public Set<String> Openid=null;
     @Override
     public List<Orders> selectOrdersByopenId(String open_id) {
        /* RedisSerializer redisSerializer=new StringRedisSerializer();
@@ -47,11 +47,13 @@ public class OrdersServiceImpl implements OrdersService {
 
 //        redisTemplate.setHashValueSerializer(redisSerializer);
         //this.redisTemplate=redisTemplate;
-        System.out.println(redisTemplate.opsForValue().get(open_id));
+       // System.out.println(redisTemplate.opsForValue().get(open_id));
         List<Orders> ordersList = (List<Orders>) (redisTemplate.opsForValue().get(open_id));
         if (null == ordersList) {
             ordersList = ordersMapper.selectOrdersByopenId(open_id);
             redisTemplate.opsForValue().set(open_id, ordersList);
+           // Openid.add(open_id);
+
         }
         return ordersList;
 

@@ -15,6 +15,7 @@ public class ActivityServiceImpl  implements  ActivityService{
     @Override
     public List<Activity> selectActivity()  {
 
+
         return  activityMapper.select();
 
         //  return activityMapper.select();
@@ -28,19 +29,19 @@ public class ActivityServiceImpl  implements  ActivityService{
     }
 
     @Override
-    public void addActivity(Activity activity)  {
+    public boolean addActivity(Activity activity)  {
 
-        activityMapper.insert(activity);
+        return activityMapper.insert(activity);
     }
 
     @Override
-    public void modifyActivity(Activity activity)  {
+    public boolean modifyActivity(Activity activity)  {
 
-        activityMapper.update(activity);
+        return activityMapper.update(activity);
     }
 
     @Override
     public void deleteActivity(int activity_id)  {
-        activityMapper.delete(activity_id);
+         activityMapper.delete(activity_id);
     }
 }

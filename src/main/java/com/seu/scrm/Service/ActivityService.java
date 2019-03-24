@@ -9,9 +9,9 @@ public interface ActivityService {
     public List<Activity> selectActivity() ;
     public Activity selectActivityById(int id) ;
    //添加活动信息
-    public void addActivity(Activity activity) ;
+    public boolean addActivity(Activity activity) ;
     //修改活动信息
-    public void modifyActivity(Activity activity)  ;
+    public boolean modifyActivity(Activity activity)  ;
     //删除活动信息
     public  void deleteActivity(int id) ;
 

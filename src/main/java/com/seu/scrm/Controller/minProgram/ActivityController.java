@@ -27,7 +27,7 @@ public class ActivityController {
         Map<String,Object> map=new HashMap<>();
         Activity activity=activityService.selectActivityById(id);
         if(activity!=null){
-            map.put("activity",activity);
+  //          map.put("activity",activity);
             map.put("id",activity.getId());
             map.put("activ_title",activity.getActiv_title());
             map.put("activ_img",activity.getActiv_img());
@@ -41,7 +41,7 @@ public class ActivityController {
     }
     @RequestMapping(value="/add" ,method = RequestMethod.POST)
     public Map<String,Object> addActivity(Activity activity) {
-        activityService.addActivity(activity);
+        boolean success=activityService.addActivity(activity);
         Map<String,Object> map=new HashMap<>();
         map.put("success",true);
         return map;
@@ -52,7 +52,7 @@ public class ActivityController {
         Activity activity=activityService.selectActivityById(id);
         Map<String,Object> map=new HashMap<>();
         if(activity!=null){
-            map.put("activity",activity);
+           // map.put("activity",activity);
             map.put("id",activity.getId());
             map.put("activ_title",activity.getActiv_title());
             map.put("activ_img",activity.getActiv_img());
@@ -67,9 +67,9 @@ public class ActivityController {
     }
     @RequestMapping(value="/Modify" ,method = RequestMethod.POST)
     public Map<String,Object>modifyActivity(Activity activity){
-        activityService.modifyActivity(activity);
+        boolean success = activityService.modifyActivity(activity);
         Map<String,Object> map=new HashMap<>();
-        map.put("success",true);
+        map.put("success",success);
         return map;
     }
     //删除活动信息

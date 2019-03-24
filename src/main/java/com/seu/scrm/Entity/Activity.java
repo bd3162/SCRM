@@ -2,14 +2,14 @@ package com.seu.scrm.Entity;
 
 import java.io.Serializable;
 
-public class Activity implements Serializable{
+public class Activity {
     private int id;
     private String activ_title;
     private String activ_img;
     private String activ_desc;
     private int  start_date;
     private int  end_date;
-    private static final long serialVersionUID = -3946734305303957853L;
+
 
 
     public int getId() {

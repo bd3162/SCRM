@@ -42,7 +42,7 @@ public class OrdersController {
             else{
                 List<Product> listProduct = hotGoodsService.selectHotGoods();
                 Map<String, Object> map = new HashMap<>();
-                map.put("热点商品", listProduct);
+                map.put("个人推荐商品", listProduct);
                 //System.out.println();
                 return map;
             }

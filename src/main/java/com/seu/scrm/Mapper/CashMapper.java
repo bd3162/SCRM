@@ -31,6 +31,16 @@ public interface CashMapper {
     boolean addOrder(@Param("user_id") String user_id, @Param("prod_asin") String prod_id, @Param("num") int num);
 
     /**
+     * @Description: 插入新用户
+     * @Param: user_id
+     * @Return: boolean (用于判断是否插入成功)
+     * @Author: karin
+     */
+
+    @Insert("insert into customer(user_id)values(#{user_id})")
+    boolean addUser(@Param("user_id") String user_id);
+
+    /**
      * @Description: 根据user_id查找用户的信息
      * @Param: user_id
      * @Return: customer

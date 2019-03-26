@@ -60,6 +60,24 @@ public class CashierController {
         return map;
     }
 
+    private String createVerif(){
+        //产生4位验证码
+        String base = "0123456789";
+        int size = base.length();
+        Random r = new Random();
+        StringBuffer code = new StringBuffer();
+        for (int i = 1; i <= 4; i++) {
+            int index = r.nextInt(size);
+            char c = base.charAt(index);
+            code.append(c);
+        }
+
+        String verif = code.toString();
+        theLatestCode=verif;
+
+        return verif;
+    }
+
     @RequestMapping("/getVerif")
     @ResponseBody
     public  Map<String, Object> getVerif(@RequestParam("user_id") String user_id){
@@ -69,32 +87,28 @@ public class CashierController {
         //查询用户信息
         Map<String,Object> customerMap =cashierService.findCustomerByID(user_id);
         //用户存在，未绑定open_id，产生验证码用户绑定open_id
-        if(customerMap!=null && customerMap.get("open_id")==null) {
+        if( customerMap.get("open_id")==null && !customerMap.get("message").equals(false)) {
 
-            //产生4位验证码
-            String base = "0123456789";
-            int size = base.length();
-            Random r = new Random();
-            StringBuffer code = new StringBuffer();
-            for (int i = 1; i <= 4; i++) {
-                int index = r.nextInt(size);
-                char c = base.charAt(index);
-                code.append(c);
-            }
-
-            String verif = code.toString();
-            theLatestCode=verif;
+            String verif=createVerif();
             map=cashierService.updateVerif(user_id,verif);
 
             map.put("member",false);
 
-        }else if(customerMap!=null) {
+        }else if(customerMap.get("open_id")!=null) {
             //用户存在，已经绑定open_id
             map.put("open_id",customerMap.get("open_id"));
             map.put("member", true);
         }else {
             //用户不存在
-            map.put("message",false);
+            Map<String,Object> customerMap2=cashierService.addUser(user_id);
+            if((boolean)customerMap2.get("message")){
+                //新用户插入数据库，更新验证码
+                String verif=createVerif();
+                map=cashierService.updateVerif(user_id,verif);
+
+                map.put("user_id",user_id);
+                map.put("member",false);
+            }
         }
         return map;
     }

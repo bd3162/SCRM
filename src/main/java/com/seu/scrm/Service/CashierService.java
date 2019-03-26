@@ -76,6 +76,29 @@ public class CashierService {
     }
 
     /**
+     * @Description: 添加新用户
+     * @Param:
+     * @Return:
+     * @Author: karin
+     */
+    public Map<String, Object> addUser(@RequestParam("user_id") String user_id ){
+
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        if(user_id!=null && user_id!="" ){
+
+            if(cashMapper.addUser(user_id)){
+                map.put("message",true);
+            }else {
+                map.put("message",false);
+            }
+        }else {
+            map.put("message",false);
+        }
+        return map;
+    }
+
+    /**
      * @Description: 根据id查找用户
      * @Param:
      * @Return:

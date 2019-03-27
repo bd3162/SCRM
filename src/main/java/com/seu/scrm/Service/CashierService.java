@@ -54,7 +54,7 @@ public class CashierService {
      * @Return:
      * @Author: karin
      */
-    public Map<String, Object> addOrder(@RequestParam("user_id") String user_id, @RequestParam("prod_asin") String prod_asin,@RequestParam("num") int num){
+    public Map<String, Object> addOrder(@RequestParam("user_id") String user_id, @RequestParam("prod_asin") String prod_asin,@RequestParam("num") int num,@RequestParam("unix_time") int unix_time){
 
         Map<String, Object> map = new HashMap<String, Object>();
 
@@ -64,8 +64,9 @@ public class CashierService {
             if(_product == null){
                 map.put("message",false);
             }
-            else if(cashMapper.addOrder(user_id, prod_asin, num)){
+            else if(cashMapper.addOrder(user_id, prod_asin, num,unix_time)){
                 map.put("message",true);
+                map.put("unix_time",unix_time);
             }else {
                 map.put("message",false);
             }

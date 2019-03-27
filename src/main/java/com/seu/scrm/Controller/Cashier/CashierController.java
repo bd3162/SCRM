@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.text.DateFormat;
+import java.util.*;
 
 @Controller
 @CrossOrigin//准许跨域访问
@@ -42,7 +40,19 @@ public class CashierController {
     @ResponseBody
     public Map<String, Object> addOrder(@RequestParam("user_id") String user_id, @RequestParam("prod_asin") String prod_asin,@RequestParam("num") int num){
         Map<String, Object> map = new HashMap<String, Object>();
-        map=cashierService.addOrder(user_id,prod_asin,num);
+        //获取当前时间，转化成unix时间戳
+        Date date = new Date();
+        DateFormat df1 = DateFormat.getDateInstance();
+        String date2=df1.format(date);
+        int time = 0;
+
+        try {
+             time=(int) (df1.parse(date2).getTime()/1000);
+
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        map=cashierService.addOrder(user_id,prod_asin,num,time);
         return map;
     }
 

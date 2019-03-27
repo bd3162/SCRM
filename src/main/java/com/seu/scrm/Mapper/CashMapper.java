@@ -27,8 +27,8 @@ public interface CashMapper {
      * @Author: karin
      */
 
-    @Insert("insert into orders(user_id,prod_asin,num)values(#{user_id},#{prod_asin},${num})")
-    boolean addOrder(@Param("user_id") String user_id, @Param("prod_asin") String prod_id, @Param("num") int num);
+    @Insert("insert into orders(user_id,prod_asin,num,unix_time)values(#{user_id},#{prod_asin},${num},${unix_time})")
+    boolean addOrder(@Param("user_id") String user_id, @Param("prod_asin") String prod_id, @Param("num") int num,@Param("unix_time") int unix_time);
 
     /**
      * @Description: 插入新用户

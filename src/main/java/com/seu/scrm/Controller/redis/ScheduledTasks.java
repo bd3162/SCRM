@@ -43,7 +43,7 @@ public class ScheduledTasks {
         //List<Product> productList = null;
         //List<Orders> ordersList = null;
         for (String key : keySet) {
-            System.out.println(key);
+            //System.out.println(key);
             List<Orders> ordersList = ordersMapper.selectOrdersByopenId(key);
                 redisTemplate.opsForValue().set(key, ordersList);
 

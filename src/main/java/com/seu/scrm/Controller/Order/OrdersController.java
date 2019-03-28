@@ -7,6 +7,9 @@ import com.seu.scrm.Mapper.OrdersMapper;
 import com.seu.scrm.Service.order.HotGoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.RedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -27,6 +30,12 @@ public class OrdersController {
 
     @RequestMapping(value="/selectById" ,method = RequestMethod.GET)
     public  Map<String,Object> selectOrdersById(String id){
+        RedisSerializer stringSerializer = new StringRedisSerializer();
+        GenericJackson2JsonRedisSerializer genericJackson2JsonRedisSerializer=new GenericJackson2JsonRedisSerializer();
+        redisTemplate.setKeySerializer(stringSerializer);
+        redisTemplate.setValueSerializer(genericJackson2JsonRedisSerializer);
+        redisTemplate.setHashKeySerializer(stringSerializer);
+        redisTemplate.setHashValueSerializer(genericJackson2JsonRedisSerializer);
         List<Orders> ordersList = (List<Orders>) redisTemplate.opsForValue().get(id);
         //redisTemplate.opsForValue().
         if(ordersList==null) {

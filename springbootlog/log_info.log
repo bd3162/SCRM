@@ -118,3 +118,53 @@
 2019-03-24 15:18:42.740 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
 2019-03-24 15:18:42.831 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
 2019-03-24 15:18:46.401 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-28 15:12:33.401 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on DESKTOP-4K66TFO with PID 9740 (C:\Users\951024\Desktop\new1\wsw3\SCRM\target\classes started by 951024 in C:\Users\951024\Desktop\new1\wsw3\SCRM)
+2019-03-28 15:12:33.446 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
+2019-03-28 15:12:34.646 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-28 15:12:34.656 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-28 15:12:34.782 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 100ms. Found 0 repository interfaces.
+2019-03-28 15:12:35.473 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ff30fc8e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-28 15:12:36.064 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 15:12:36.094 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:12:36.104 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-28 15:12:36.104 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-28 15:12:36.114 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\java\jdk\bin;D:\java\jdk\jre\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\；D:\java\mysql\bin;;:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\WINDOWS\System32\OpenSSH\;D:\java\gradle-4.10.1\bin;D:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\951024\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\951024\AppData\Local\Programs\Python\Python37-32\;C:\Users\951024\AppData\Local\Microsoft\WindowsApps;C:\Users\951024\AppData\Local\GitHubDesktop\bin;C:\Users\951024\AppData\Roaming\npm;D:\Program Files\Microsoft VS Code\bin;.]
+2019-03-28 15:12:36.305 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-28 15:12:36.306 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2759 ms
+2019-03-28 15:12:38.361 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-28 15:12:38.718 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-03-28 15:12:38.778 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:12:38.808 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-28 15:12:38.812 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 6.087 seconds (JVM running for 9.293)
+2019-03-28 15:13:00.110 [scheduling-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-03-28 15:13:00.112 [scheduling-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-03-28 15:13:06.912 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-28 15:13:06.912 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-03-28 15:13:06.940 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 28 ms
+2019-03-28 15:13:07.262 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-28 15:13:09.915 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-03-28 15:17:05.661 [main] INFO  com.seu.scrm.ScrmApplication - Starting ScrmApplication on DESKTOP-4K66TFO with PID 38356 (C:\Users\951024\Desktop\new1\wsw3\SCRM\target\classes started by 951024 in C:\Users\951024\Desktop\new1\wsw3\SCRM)
+2019-03-28 15:17:05.664 [main] INFO  com.seu.scrm.ScrmApplication - No active profile set, falling back to default profiles: default
+2019-03-28 15:17:06.959 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-28 15:17:06.962 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-28 15:17:07.059 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 81ms. Found 0 repository interfaces.
+2019-03-28 15:17:07.393 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$84187f5d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-28 15:17:07.747 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 15:17:07.762 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:17:07.772 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-28 15:17:07.773 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-28 15:17:07.779 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\java\jdk\bin;D:\java\jdk\jre\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\；D:\java\mysql\bin;;:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\WINDOWS\System32\OpenSSH\;D:\java\gradle-4.10.1\bin;D:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\951024\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\951024\AppData\Local\Programs\Python\Python37-32\;C:\Users\951024\AppData\Local\Microsoft\WindowsApps;C:\Users\951024\AppData\Local\GitHubDesktop\bin;C:\Users\951024\AppData\Roaming\npm;D:\Program Files\Microsoft VS Code\bin;.]
+2019-03-28 15:17:07.920 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-28 15:17:07.920 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2151 ms
+2019-03-28 15:17:09.005 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-28 15:17:09.310 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-03-28 15:17:09.362 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:17:09.402 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-28 15:17:09.406 [main] INFO  com.seu.scrm.ScrmApplication - Started ScrmApplication in 4.535 seconds (JVM running for 7.004)
+2019-03-28 15:17:29.177 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-28 15:17:29.178 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-03-28 15:17:29.188 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2019-03-28 15:17:29.377 [http-nio-8080-exec-2] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-03-28 15:17:29.379 [http-nio-8080-exec-2] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-03-28 15:17:32.335 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-03-28 15:17:34.783 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
